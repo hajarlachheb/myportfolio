@@ -24,7 +24,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <div className="mx-auto max-w-2xl px-5 py-12 sm:px-6 sm:py-14">
+    <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <p className="mb-6 text-sm text-ink-muted">
         <Link href="/blog" className="font-medium text-accent hover:underline">
           ← Blog

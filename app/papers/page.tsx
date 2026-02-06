@@ -8,20 +8,20 @@ export const metadata = {
 
 export default function PapersPage() {
   return (
-    <div className="mx-auto max-w-2xl px-5 py-12 sm:px-6 sm:py-14">
+    <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
         Papers
       </h1>
-      <p className="text-ink-muted mb-8">
+      <p className="text-ink-muted mb-8 text-lg">
         Academic and professional publications. Click a title for abstract and links.
       </p>
 
-      <ul className="space-y-2">
+      <ul className="space-y-3">
         {papers.map((paper) => (
           <li key={paper.slug}>
             <Link
               href={`/papers/${paper.slug}`}
-              className="group block rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft transition-all duration-200 hover:border-accent-soft hover:shadow-soft-hover"
+              className="group block rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft kawaii-card transition-all duration-200 hover:border-accent-soft hover:-translate-y-0.5"
             >
               <h2 className="font-display font-semibold text-lg text-[var(--ink)] transition-colors group-hover:text-accent">
                 {paper.title}
@@ -47,7 +47,7 @@ export default function PapersPage() {
       </ul>
 
       {papers.length === 0 && (
-        <div className="rounded-card border border-[var(--border)] bg-cream/50 p-8 text-center text-ink-muted">
+        <div className="rounded-kawaii border border-[var(--border)] bg-cream/50 p-8 text-center text-ink-muted">
           No papers yet. Add entries in content/papers.ts.
         </div>
       )}

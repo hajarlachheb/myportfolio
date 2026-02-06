@@ -21,7 +21,7 @@ export default async function PaperPage({ params }: Props) {
   if (!paper) notFound();
 
   return (
-    <div className="mx-auto max-w-2xl px-5 py-12 sm:px-6 sm:py-14">
+    <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <p className="mb-6 text-sm text-ink-muted">
         <Link href="/papers" className="font-medium text-accent hover:underline">
           ← Papers
@@ -62,7 +62,7 @@ export default async function PaperPage({ params }: Props) {
       </div>
 
       {paper.abstract && (
-        <section className="mt-8 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft">
+        <section className="mt-8 rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft kawaii-card">
           <h2 className="font-display text-lg font-semibold text-[var(--ink)] mb-2">
             Abstract
           </h2>

@@ -7,14 +7,17 @@
   --ink-muted: #6b6560;
   --paper: #fdf5f7;
   --paper-elevated: #fffbfc;
-  --accent: #d4a5a5;
-  --accent-soft: #f0d4d4;
+  --accent: #e8a4b0;
+  --accent-soft: #f5d4dc;
   --sakura: #e8b4b8;
   --sakura-light: #f5d0d4;
   --sakura-petal: #fce4ec;
   --cream: #faf0f2;
   --border: rgba(45, 42, 38, 0.06);
-  --border-strong: rgba(232, 180, 184, 0.35);
+  --border-strong: rgba(232, 180, 184, 0.4);
+  /* Kawaii: extra round corners */
+  --radius-card: 1.25rem;
+  --radius-button: 1rem;
 }
 
 html {
@@ -25,10 +28,10 @@ body {
   background: var(--paper);
   color: var(--ink);
   background-image:
-    radial-gradient(ellipse 120% 70% at 50% -20%, rgba(248, 212, 220, 0.5), transparent 55%),
-    radial-gradient(ellipse 80% 50% at 90% 10%, rgba(245, 224, 228, 0.4), transparent 50%),
-    radial-gradient(ellipse 70% 60% at 5% 70%, rgba(232, 180, 184, 0.2), transparent 45%),
-    radial-gradient(ellipse 60% 40% at 70% 90%, rgba(252, 228, 236, 0.3), transparent 40%);
+    radial-gradient(ellipse 140% 80% at 50% -15%, rgba(252, 220, 228, 0.55), transparent 50%),
+    radial-gradient(ellipse 90% 60% at 92% 8%, rgba(248, 228, 235, 0.45), transparent 48%),
+    radial-gradient(ellipse 75% 65% at 3% 75%, rgba(232, 180, 184, 0.25), transparent 45%),
+    radial-gradient(ellipse 65% 45% at 72% 92%, rgba(252, 228, 236, 0.35), transparent 42%);
   min-height: 100vh;
 }
 
@@ -61,4 +64,17 @@ body {
 /* Sakura petal decorative (optional use) */
 .sakura-blossom {
   filter: drop-shadow(0 1px 2px rgba(45, 42, 38, 0.06));
+}
+
+/* Kawaii card glow */
+.kawaii-card {
+  border-radius: var(--radius-card);
+  box-shadow:
+    0 2px 12px rgba(45, 42, 38, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+.kawaii-card:hover {
+  box-shadow:
+    0 8px 28px rgba(232, 180, 184, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.7) inset;
 }

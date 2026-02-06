@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function CVPage() {
   return (
-    <div className="mx-auto max-w-2xl px-5 py-12 sm:px-6 sm:py-14">
+    <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)]">
@@ -62,7 +62,7 @@ export default function CVPage() {
         </h2>
         <ul className="space-y-6">
           {cv.experience.map((job, i) => (
-            <li key={i} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft">
+            <li key={i} className="rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft kawaii-card">
               <div className="flex flex-wrap justify-between gap-2">
                 <span className="font-medium text-[var(--ink)]">{job.role}</span>
                 <span className="text-sm text-ink-muted">
@@ -87,7 +87,7 @@ export default function CVPage() {
         </h2>
         <ul className="space-y-4">
           {cv.education.map((edu, i) => (
-            <li key={i} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft">
+            <li key={i} className="rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft kawaii-card">
               <div className="flex flex-wrap justify-between gap-2">
                 <span className="font-medium text-[var(--ink)]">{edu.degree}</span>
                 <span className="text-sm text-ink-muted">{edu.year}</span>

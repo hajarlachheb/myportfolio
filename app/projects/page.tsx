@@ -8,11 +8,11 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-2xl px-5 py-12 sm:px-6 sm:py-14">
+    <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2 animate-fade-in">
         Projects
       </h1>
-      <p className="text-ink-muted mb-10 animate-fade-in animation-delay-100">
+      <p className="text-ink-muted mb-10 text-lg animate-fade-in animation-delay-100">
         Things I've built — from AI & data to community and hackathons.
       </p>
 
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         {cv.projects.map((project, i) => (
           <li
             key={project.name}
-            className="animate-fade-in rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft transition-all duration-200 hover:border-accent-soft hover:shadow-soft-hover hover:-translate-y-0.5"
+            className="animate-fade-in rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft kawaii-card transition-all duration-200 hover:border-accent-soft hover:-translate-y-0.5"
             style={{ animationDelay: `${(i + 2) * 100}ms` }}
           >
             <div className="flex flex-wrap items-start justify-between gap-2">
