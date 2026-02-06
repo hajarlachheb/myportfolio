@@ -1,0 +1,53 @@
+import type { Metadata } from "next";
+import { Crimson_Pro, DM_Sans } from "next/font/google";
+import "./globals.css";
+import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
+
+const display = Crimson_Pro({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const body = DM_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+export const metadata: Metadata = {
+  title: { default: "Hajar Lachheb | Data Scientist & AI Researcher", template: "%s | Hajar Lachheb" },
+  description: "Girl in tech. CV, papers, blog, projects. Building scalable, secure, responsible AI.",
+  openGraph: { type: "website" },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
+      <body className="min-h-screen flex flex-col font-body antialiased">
+        <Nav />
+        <main className="relative flex-1">
+          <div
+            className="pointer-events-none fixed right-4 top-28 select-none text-xl opacity-40 sm:right-8 sm:top-32 sm:text-2xl"
+            aria-hidden
+          >
+            🌸
+          </div>
+          <div
+            className="pointer-events-none fixed bottom-24 left-4 select-none text-lg opacity-35 sm:bottom-28 sm:left-8 sm:text-xl"
+            aria-hidden
+          >
+            🌸
+          </div>
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

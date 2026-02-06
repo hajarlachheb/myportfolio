@@ -1,0 +1,32 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "Podcast",
+  description: "Podcast episodes (coming soon).",
+};
+
+export default function PodcastPage() {
+  return (
+    <div className="mx-auto max-w-2xl px-5 py-12 sm:px-6 sm:py-14">
+      <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+        Podcast
+      </h1>
+      <p className="text-ink-muted mb-8">
+        Episode list and show notes will go here. When you're ready, add a
+        content source (e.g.{" "}
+        <code className="rounded-button bg-cream px-1.5 py-0.5 text-sm text-[var(--ink)]">
+          content/podcast.ts
+        </code>{" "}
+        or Markdown per episode) and a simple list + detail page like Papers/Blog.
+      </p>
+      <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-8 text-center text-ink-muted shadow-soft">
+        Coming soon
+      </div>
+      <p className="mt-10 text-sm text-ink-muted">
+        <Link href="/" className="font-medium text-accent hover:underline">
+          ← Back to home
+        </Link>
+      </p>
+    </div>
+  );
+}
