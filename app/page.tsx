@@ -1,10 +1,7 @@
 import Link from "next/link";
 import { cv } from "@/content/cv";
-import { support } from "@/content/support";
 
 export default function HomePage() {
-  const showSupport = support.buyMeACoffeeUrl || support.koFiUrl;
-
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       {/* Hero */}
@@ -119,6 +116,18 @@ export default function HomePage() {
           </p>
         </Link>
         <Link
+          href="/talks"
+          className="group block rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft kawaii-card transition-all duration-200 hover:border-accent-soft hover:-translate-y-1"
+        >
+          <span className="mb-3 block text-3xl opacity-90">🎤</span>
+          <h2 className="font-display text-xl font-semibold text-[var(--ink)] transition-colors group-hover:text-accent">
+            Talks
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+            AI meetups, tech talks & conferences.
+          </p>
+        </Link>
+        <Link
           href="/blog"
           className="group block rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft kawaii-card transition-all duration-200 hover:border-accent-soft hover:-translate-y-1"
         >
@@ -145,40 +154,6 @@ export default function HomePage() {
           </p>
         </a>
       </section>
-
-      {/* Support / Buy me a coffee - on-page callout */}
-      {showSupport && (
-        <section className="mt-14">
-          <div className="rounded-kawaii border border-[var(--border-strong)] bg-gradient-to-br from-sakura-petal/50 to-cream/90 p-6 shadow-kawaii">
-            <p className="mb-4 text-[var(--ink)] font-medium">
-              {support.message}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {support.buyMeACoffeeUrl && (
-                <a
-                  href={support.buyMeACoffeeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-button bg-[#FFDD00] px-5 py-3 text-sm font-semibold text-[#000] shadow-soft transition-all duration-200 hover:scale-105 hover:shadow-soft-hover"
-                >
-                  <span aria-hidden>☕</span>
-                  Buy me a coffee
-                </a>
-              )}
-              {support.koFiUrl && (
-                <a
-                  href={support.koFiUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-button border-2 border-[var(--border-strong)] bg-[var(--paper-elevated)] px-5 py-3 text-sm font-medium text-[var(--ink)] transition-all duration-200 hover:border-accent hover:bg-cream"
-                >
-                  Ko-fi
-                </a>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
     </div>
   );
 }

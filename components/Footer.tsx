@@ -53,6 +53,9 @@ export function Footer() {
           <Link href="/papers" className="transition-colors hover:text-accent">
             Papers
           </Link>
+          <Link href="/talks" className="transition-colors hover:text-accent">
+            Talks
+          </Link>
           <Link href="/blog" className="transition-colors hover:text-accent">
             Blog
           </Link>
