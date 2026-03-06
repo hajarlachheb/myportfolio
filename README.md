@@ -10,6 +10,7 @@ One site that works as your **CV** and **content hub**: papers, blog, and later 
 | **CV**   | Full resume                | `content/cv.ts` (single source)  |
 | **Papers** | List + detail per paper | `content/papers.ts`              |
 | **Blog** | Posts list + single post   | `content/blog/*.md` (frontmatter) |
+| **Talks** | Public talks (meetups, conferences) | `content/talks.ts` |
 | **Podcast** | Placeholder for later   | Add `content/podcast.ts` when ready |
 
 ## Quick start
@@ -19,7 +20,15 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3001](http://localhost:3001) (or the port in `package.json`).
+
+**Local build (static export):**
+
+```bash
+npm run build
+```
+
+Output is in the `out/` folder. For local testing with basePath (e.g. `/myportfolio`), run `BASE_PATH=/myportfolio npm run build` then serve `out/` with a static server.
 
 ## Content
 
@@ -39,8 +48,22 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy
 
-- **Vercel**: Connect the repo; default Next.js build works.
-- **Netlify**: Same; use `next build` and `next start` or static export if you add `output: 'export'` in `next.config.mjs`.
+### GitHub Pages (recommended)
+
+The project is set up for **static export** and **GitHub Actions** deployment:
+
+1. **Push the repo to GitHub** (e.g. `https://github.com/yourusername/myportfolio`).
+2. In the repo go to **Settings → Pages**.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. On every push to `main`, the workflow (`.github/workflows/deploy.yml`) will build and deploy the site.
+5. The site will be available at `https://yourusername.github.io/myportfolio/` (replace `myportfolio` with your repo name).
+
+For a **user/org site** (e.g. `username.github.io`), edit the workflow and set `BASE_PATH` to empty, or add a repo variable `BASE_PATH` = `` and use it in the workflow.
+
+### Other hosts
+
+- **Vercel**: Connect the repo; use Node server or switch to static export.
+- **Netlify**: Connect the repo; build command `npm run build`, publish directory `out`.
 
 ## Tech
 

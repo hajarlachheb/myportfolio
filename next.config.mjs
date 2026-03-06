@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
+const basePath = process.env.BASE_PATH || "";
 const nextConfig = {
-  // Optional: output: 'export' for static export (e.g. Netlify/Vercel static)
+  output: "export",
+  basePath: basePath,
+  assetPrefix: basePath ? `${basePath}/` : "",
 };
 
 export default nextConfig;

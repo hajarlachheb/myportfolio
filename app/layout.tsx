@@ -20,10 +20,6 @@ export const metadata: Metadata = {
   title: { default: "Hajar Lachheb | Data Scientist & AI Researcher", template: "%s | Hajar Lachheb" },
   description: "Girl in tech. CV, papers, blog, projects. Building scalable, secure, responsible AI.",
   openGraph: { type: "website" },
-  icons: {
-    icon: "/icon",
-    apple: "/apple-icon",
-  },
 };
 
 export default function RootLayout({
