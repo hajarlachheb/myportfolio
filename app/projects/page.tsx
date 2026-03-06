@@ -44,7 +44,7 @@ export default function ProjectsPage() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[var(--ink)] hover:underline"
+                className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)] hover:underline"
               >
                 View project →
               </a>
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
       </ul>
 
       <p className="mt-10 text-sm text-[var(--ink-muted)]">
-        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
+        <Link href="/" className="font-medium text-[var(--accent)] hover:underline">
           ← Back to home
         </Link>
       </p>

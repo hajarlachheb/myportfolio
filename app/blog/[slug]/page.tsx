@@ -26,7 +26,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <p className="mb-6 text-sm text-[var(--ink-muted)]">
-        <Link href="/blog" className="font-medium text-[var(--ink)] hover:underline">
+        <Link href="/blog" className="font-medium text-[var(--accent)] hover:underline">
           ← Blog
         </Link>
       </p>

@@ -23,7 +23,7 @@ export default function PodcastPage() {
         Coming soon
       </div>
       <p className="mt-10 text-sm text-[var(--ink-muted)]">
-        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
+        <Link href="/" className="font-medium text-[var(--accent)] hover:underline">
           ← Back to home
         </Link>
       </p>

@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: { DEFAULT: "#404040", dark: "#262626", soft: "#e5e5e5" },
+        accent: { DEFAULT: "#2563eb", dark: "#1d4ed8", soft: "#eff6ff" },
         ink: { DEFAULT: "#171717", muted: "#525252", light: "#737373" },
         paper: "#fafafa",
         "paper-elevated": "#ffffff",

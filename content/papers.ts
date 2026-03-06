@@ -16,24 +16,13 @@ export type Paper = {
 
 export const papers: Paper[] = [
   {
-    slug: "example-paper-2024",
-    title: "Example Paper Title: A Study of Something",
-    authors: "You, Co-Author, Another Author",
-    venue: "Conference or Journal Name (e.g. NeurIPS 2024)",
+    slug: "exact-efficient-unlearning-llms",
+    title: "Exact and Efficient Unlearning for Large Language Models",
+    authors: "Hajar Lachheb, ...",
+    venue: "Preprint",
     year: "2024",
-    link: "https://example.com/paper",
-    pdf: "/papers/example-paper-2024.pdf",
-    abstract:
-      "Optional abstract. You can show this on the paper detail page.",
-    type: "conference",
-  },
-  {
-    slug: "another-paper-2023",
-    title: "Another Publication",
-    authors: "You, Collaborator",
-    venue: "Journal of X (2023)",
-    year: "2023",
-    pdf: "/papers/another-2023.pdf",
-    type: "journal",
+    pdf: "/papers/exact-efficient-unlearning-llms.pdf",
+    abstract: undefined,
+    type: "preprint",
   },
 ];

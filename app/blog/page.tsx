@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { getBlogPosts } from "@/lib/blog";
+import { BlogList } from "@/components/BlogList";
 
 export const metadata = {
   title: "Blog",
@@ -8,53 +8,5 @@ export const metadata = {
 
 export default function BlogPage() {
   const posts = getBlogPosts();
-
-  return (
-    <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
-        Blog
-      </h1>
-      <p className="text-[var(--ink-muted)] mb-8 text-lg">
-        Articles, essays, and tutorials. Newest first.
-      </p>
-
-      <ul className="space-y-3">
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link
-              href={`/blog/${post.slug}`}
-              className="group block rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 transition-colors hover:border-[var(--border-strong)]"
-            >
-              <h2 className="font-display font-semibold text-lg text-[var(--ink)]">
-                {post.title}
-              </h2>
-              <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                {post.date}
-                {post.tags && post.tags.length > 0 && (
-                  <> · {post.tags.join(", ")}</>
-                )}
-              </p>
-              {post.excerpt && (
-                <p className="mt-2 text-sm leading-relaxed text-[var(--ink)]">
-                  {post.excerpt}
-                </p>
-              )}
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-      {posts.length === 0 && (
-        <div className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-8 text-center text-[var(--ink-muted)]">
-          No posts yet. Add .md files in content/blog/ with frontmatter.
-        </div>
-      )}
-
-      <p className="mt-10 text-sm text-[var(--ink-muted)]">
-        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
-          ← Back to home
-        </Link>
-      </p>
-    </div>
-  );
+  return <BlogList posts={posts} />;
 }

@@ -7,8 +7,9 @@
   --ink-muted: #525252;
   --paper: #fafafa;
   --paper-elevated: #ffffff;
-  --accent: #404040;
-  --accent-dark: #262626;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --accent-soft: #eff6ff;
   --border: #e5e5e5;
   --border-strong: #a3a3a3;
 }
@@ -24,7 +25,7 @@ body {
 }
 
 ::selection {
-  background: #e5e5e5;
+  background: var(--accent-soft);
   color: var(--ink);
 }
 
@@ -32,13 +33,13 @@ body {
   color: var(--ink);
 }
 .prose a {
-  color: var(--ink);
+  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color 0.15s;
 }
 .prose a:hover {
-  color: var(--ink-muted);
+  color: var(--accent-dark);
 }
 
 .animation-delay-100 { animation-delay: 100ms; }

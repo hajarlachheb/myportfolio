@@ -1,18 +1,11 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import type { BlogPost } from "./blog-utils";
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-export type BlogPost = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt?: string;
-  tags?: string[];
-  category?: string;
-  content: string;
-};
+export type { BlogPost } from "./blog-utils";
 
 export function getBlogSlugs(): string[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
@@ -32,6 +25,7 @@ export function getBlogPosts(): BlogPost[] {
         excerpt: data.excerpt as string | undefined,
         tags: (data.tags as string[]) ?? [],
         category: data.category as string | undefined,
+        image: data.image as string | undefined,
         content,
       };
     })
@@ -51,6 +45,7 @@ export function getBlogPost(slug: string): BlogPost | null {
     excerpt: data.excerpt as string | undefined,
     tags: (data.tags as string[]) ?? [],
     category: data.category as string | undefined,
+    image: data.image as string | undefined,
     content,
   };
 }

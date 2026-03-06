@@ -9,23 +9,11 @@ export const metadata = {
 export default function CVPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)]">
-            {cv.name}
-          </h1>
-          <p className="mt-1 text-[var(--ink-muted)]">{cv.title}</p>
-        </div>
-        {cv.pdfUrl && (
-          <a
-            href={cv.pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-button border border-[var(--border-strong)] bg-[var(--paper-elevated)] px-4 py-2 text-sm font-medium text-[var(--ink)] transition-colors hover:bg-neutral-100"
-          >
-            Download PDF
-          </a>
-        )}
+      <div className="mb-10">
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)]">
+          {cv.name}
+        </h1>
+        <p className="mt-1 text-[var(--ink-muted)]">{cv.title}</p>
       </div>
 
       <section className="mb-8">
@@ -34,7 +22,7 @@ export default function CVPage() {
         </h2>
         <ul className="space-y-1 text-[var(--ink)]">
           <li>
-            <a href={`mailto:${cv.email}`} className="text-[var(--ink)] hover:underline">
+            <a href={`mailto:${cv.email}`} className="text-[var(--accent)] hover:underline">
               {cv.email}
             </a>
           </li>
@@ -47,7 +35,7 @@ export default function CVPage() {
                 href={l.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[var(--ink)] hover:underline"
+                className="text-[var(--accent)] hover:underline"
               >
                 {l.label}
               </a>
@@ -115,6 +103,17 @@ export default function CVPage() {
         </ul>
       </section>
 
+      {"languages" in cv && cv.languages.length > 0 && (
+        <section className="mb-8">
+          <h2 className="font-display text-lg font-semibold text-[var(--ink)] border-b border-[var(--border-strong)] pb-2 mb-4">
+            Languages
+          </h2>
+          <p className="text-sm text-[var(--ink)]">
+            {cv.languages.join(", ")}
+          </p>
+        </section>
+      )}
+
       {"projects" in cv && cv.projects.length > 0 && (
         <section className="mb-8">
           <h2 className="font-display text-lg font-semibold text-[var(--ink)] border-b border-[var(--border-strong)] pb-2 mb-4">
@@ -133,7 +132,7 @@ export default function CVPage() {
                     href={proj.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 inline-block text-sm font-medium text-[var(--ink)] hover:underline"
+                    className="mt-1 inline-block text-sm font-medium text-[var(--accent)] hover:underline"
                   >
                     Link
                   </a>
@@ -141,7 +140,7 @@ export default function CVPage() {
               </li>
             ))}
           </ul>
-          <Link href="/projects" className="mt-2 inline-block text-sm font-medium text-[var(--ink)] hover:underline">
+          <Link href="/projects" className="mt-2 inline-block text-sm font-medium text-[var(--accent)] hover:underline">
             View all projects →
           </Link>
         </section>
@@ -161,7 +160,7 @@ export default function CVPage() {
       )}
 
       <p className="mt-10 text-sm text-[var(--ink-muted)]">
-        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
+        <Link href="/" className="font-medium text-[var(--accent)] hover:underline">
           ← Back to home
         </Link>
       </p>

@@ -78,8 +78,8 @@ export default function TalksPage() {
               onClick={() => setTypeFilter(value)}
               className={`rounded-button px-3 py-1.5 text-sm font-medium transition-colors ${
                 typeFilter === value
-                  ? "bg-neutral-100 text-[var(--ink)]"
-                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                  ? "bg-[var(--accent-soft)] text-[var(--accent)]"
+                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--accent)]"
               }`}
             >
               {label}
@@ -92,8 +92,8 @@ export default function TalksPage() {
             onClick={() => setYearFilter("all")}
             className={`rounded-button px-3 py-1.5 text-sm font-medium transition-colors ${
               yearFilter === "all"
-                ? "bg-neutral-100 text-[var(--ink)]"
-                : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                ? "bg-[var(--accent-soft)] text-[var(--accent)]"
+                : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--accent)]"
             }`}
           >
             All
@@ -104,8 +104,8 @@ export default function TalksPage() {
               onClick={() => setYearFilter(y)}
               className={`rounded-button px-3 py-1.5 text-sm font-medium transition-colors ${
                 yearFilter === y
-                  ? "bg-neutral-100 text-[var(--ink)]"
-                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                  ? "bg-[var(--accent-soft)] text-[var(--accent)]"
+                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--accent)]"
             }`}
             >
               {y}
@@ -134,7 +134,7 @@ export default function TalksPage() {
                     href={talk.links.summary}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)]"
                   >
                     Summary
                   </a>
@@ -144,7 +144,7 @@ export default function TalksPage() {
                     href={talk.links.slides}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)]"
                   >
                     Slides
                   </a>
@@ -154,7 +154,7 @@ export default function TalksPage() {
                     href={talk.links.abstract}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)]"
                   >
                     Abstract
                   </a>
@@ -164,7 +164,7 @@ export default function TalksPage() {
                     href={talk.links.paper}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)]"
                   >
                     Paper
                   </a>
@@ -174,7 +174,7 @@ export default function TalksPage() {
                     href={talk.links.poster}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)]"
                   >
                     Poster
                   </a>
@@ -184,7 +184,7 @@ export default function TalksPage() {
                     href={talk.links.photo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)]"
                   >
                     Photo
                   </a>
@@ -202,7 +202,7 @@ export default function TalksPage() {
       )}
 
       <p className="mt-10 text-sm text-[var(--ink-muted)]">
-        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
+        <Link href="/" className="font-medium text-[var(--accent)] hover:underline">
           ← Back to home
         </Link>
       </p>

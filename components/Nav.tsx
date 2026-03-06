@@ -21,7 +21,7 @@ export function Nav() {
       <nav className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
         <Link
           href="/"
-          className="font-display text-lg font-semibold text-[var(--ink)] transition-colors hover:text-[var(--ink-muted)]"
+          className="font-display text-lg font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent)]"
         >
           Hajar L.
         </Link>
@@ -35,8 +35,8 @@ export function Nav() {
                   href={href}
                   className={`rounded-button px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-[var(--ink)] bg-neutral-100"
-                      : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                      ? "text-[var(--accent)] bg-[var(--accent-soft)]"
+                      : "text-[var(--ink-muted)] hover:text-[var(--accent)]"
                   }`}
                 >
                   {label}
