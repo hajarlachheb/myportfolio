@@ -25,8 +25,8 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <p className="mb-6 text-sm text-ink-muted">
-        <Link href="/blog" className="font-medium text-accent hover:underline">
+      <p className="mb-6 text-sm text-[var(--ink-muted)]">
+        <Link href="/blog" className="font-medium text-[var(--ink)] hover:underline">
           ← Blog
         </Link>
       </p>
@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }: Props) {
         <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
           {post.title}
         </h1>
-        <p className="mb-6 text-sm text-ink-muted">
+        <p className="mb-6 text-sm text-[var(--ink-muted)]">
           {post.date}
           {post.tags && post.tags.length > 0 && (
             <> · {post.tags.join(", ")}</>

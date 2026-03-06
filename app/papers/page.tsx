@@ -12,7 +12,7 @@ export default function PapersPage() {
       <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
         Papers
       </h1>
-      <p className="text-ink-muted mb-8 text-lg">
+      <p className="text-[var(--ink-muted)] mb-8 text-lg">
         Academic and professional publications. Click a title for abstract and links.
       </p>
 
@@ -21,22 +21,22 @@ export default function PapersPage() {
           <li key={paper.slug}>
             <Link
               href={`/papers/${paper.slug}`}
-              className="group block rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft kawaii-card transition-all duration-200 hover:border-accent-soft hover:-translate-y-0.5"
+              className="group block rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 transition-colors hover:border-[var(--border-strong)]"
             >
-              <h2 className="font-display font-semibold text-lg text-[var(--ink)] transition-colors group-hover:text-accent">
+              <h2 className="font-display font-semibold text-lg text-[var(--ink)]">
                 {paper.title}
               </h2>
-              <p className="mt-1 text-sm text-ink-muted">
+              <p className="mt-1 text-sm text-[var(--ink-muted)]">
                 {paper.authors} · {paper.venue} ({paper.year})
               </p>
               <div className="mt-2 flex flex-wrap gap-2 text-sm">
                 {paper.pdf && (
-                  <span className="rounded-button bg-accent/10 px-2 py-0.5 font-medium text-accent">
+                  <span className="rounded-button bg-neutral-100 px-2 py-0.5 text-xs font-medium text-[var(--ink-muted)]">
                     PDF
                   </span>
                 )}
                 {paper.link && (
-                  <span className="rounded-button bg-accent/10 px-2 py-0.5 font-medium text-accent">
+                  <span className="rounded-button bg-neutral-100 px-2 py-0.5 text-xs font-medium text-[var(--ink-muted)]">
                     Link
                   </span>
                 )}
@@ -47,13 +47,13 @@ export default function PapersPage() {
       </ul>
 
       {papers.length === 0 && (
-        <div className="rounded-kawaii border border-[var(--border)] bg-cream/50 p-8 text-center text-ink-muted">
+        <div className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-8 text-center text-[var(--ink-muted)]">
           No papers yet. Add entries in content/papers.ts.
         </div>
       )}
 
-      <p className="mt-10 text-sm text-ink-muted">
-        <Link href="/" className="font-medium text-accent hover:underline">
+      <p className="mt-10 text-sm text-[var(--ink-muted)]">
+        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
           ← Back to home
         </Link>
       </p>

@@ -14,7 +14,7 @@ export default function BlogPage() {
       <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
         Blog
       </h1>
-      <p className="text-ink-muted mb-8 text-lg">
+      <p className="text-[var(--ink-muted)] mb-8 text-lg">
         Articles, essays, and tutorials. Newest first.
       </p>
 
@@ -23,12 +23,12 @@ export default function BlogPage() {
           <li key={post.slug}>
             <Link
               href={`/blog/${post.slug}`}
-              className="group block rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft kawaii-card transition-all duration-200 hover:border-accent-soft hover:-translate-y-0.5"
+              className="group block rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 transition-colors hover:border-[var(--border-strong)]"
             >
-              <h2 className="font-display font-semibold text-lg text-[var(--ink)] transition-colors group-hover:text-accent">
+              <h2 className="font-display font-semibold text-lg text-[var(--ink)]">
                 {post.title}
               </h2>
-              <p className="mt-1 text-sm text-ink-muted">
+              <p className="mt-1 text-sm text-[var(--ink-muted)]">
                 {post.date}
                 {post.tags && post.tags.length > 0 && (
                   <> · {post.tags.join(", ")}</>
@@ -45,13 +45,13 @@ export default function BlogPage() {
       </ul>
 
       {posts.length === 0 && (
-        <div className="rounded-kawaii border border-[var(--border)] bg-cream/50 p-8 text-center text-ink-muted">
+        <div className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-8 text-center text-[var(--ink-muted)]">
           No posts yet. Add .md files in content/blog/ with frontmatter.
         </div>
       )}
 
-      <p className="mt-10 text-sm text-ink-muted">
-        <Link href="/" className="font-medium text-accent hover:underline">
+      <p className="mt-10 text-sm text-[var(--ink-muted)]">
+        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
           ← Back to home
         </Link>
       </p>

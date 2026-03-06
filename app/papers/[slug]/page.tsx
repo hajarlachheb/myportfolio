@@ -22,8 +22,8 @@ export default async function PaperPage({ params }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <p className="mb-6 text-sm text-ink-muted">
-        <Link href="/papers" className="font-medium text-accent hover:underline">
+      <p className="mb-6 text-sm text-[var(--ink-muted)]">
+        <Link href="/papers" className="font-medium text-[var(--ink)] hover:underline">
           ← Papers
         </Link>
       </p>
@@ -33,7 +33,7 @@ export default async function PaperPage({ params }: Props) {
       <p className="text-[var(--ink)]">
         {paper.authors}
       </p>
-      <p className="mt-1 text-sm text-ink-muted">
+      <p className="mt-1 text-sm text-[var(--ink-muted)]">
         {paper.venue} · {paper.year}
         {paper.type && ` · ${paper.type}`}
       </p>
@@ -44,7 +44,7 @@ export default async function PaperPage({ params }: Props) {
             href={paper.pdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-button bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
+            className="inline-flex items-center rounded-button border border-[var(--border-strong)] bg-[var(--ink)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--accent-dark)]"
           >
             PDF
           </a>
@@ -54,7 +54,7 @@ export default async function PaperPage({ params }: Props) {
             href={paper.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-button border-2 border-[var(--border-strong)] bg-[var(--paper-elevated)] px-4 py-2 text-sm font-medium text-[var(--ink)] transition-colors hover:border-accent-soft hover:bg-cream"
+            className="inline-flex items-center rounded-button border border-[var(--border)] bg-[var(--paper-elevated)] px-4 py-2 text-sm font-medium text-[var(--ink)] transition-colors hover:bg-neutral-100"
           >
             External link
           </a>
@@ -62,7 +62,7 @@ export default async function PaperPage({ params }: Props) {
       </div>
 
       {paper.abstract && (
-        <section className="mt-8 rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft kawaii-card">
+        <section className="mt-8 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6">
           <h2 className="font-display text-lg font-semibold text-[var(--ink)] mb-2">
             Abstract
           </h2>

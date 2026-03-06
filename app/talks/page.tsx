@@ -44,33 +44,33 @@ export default function TalksPage() {
       <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
         Public Talks
       </h1>
-      <p className="text-ink-muted mb-8 text-lg">
+      <p className="text-[var(--ink-muted)] mb-8 text-lg">
         AI meetups, tech talks & conferences.
       </p>
 
       {/* Stats */}
       <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-        <div className="rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft kawaii-card text-center">
-          <div className="font-display text-2xl font-semibold text-accent">{stats.talks}</div>
-          <div className="text-sm text-ink-muted">Talks</div>
+        <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center">
+          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.talks}</div>
+          <div className="text-sm text-[var(--ink-muted)]">Talks</div>
         </div>
-        <div className="rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft kawaii-card text-center">
-          <div className="font-display text-2xl font-semibold text-accent">{stats.meetups}</div>
-          <div className="text-sm text-ink-muted">Meetups</div>
+        <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center">
+          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.meetups}</div>
+          <div className="text-sm text-[var(--ink-muted)]">Meetups</div>
         </div>
-        <div className="rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft kawaii-card text-center">
-          <div className="font-display text-2xl font-semibold text-accent">{stats.conferences}</div>
-          <div className="text-sm text-ink-muted">Conferences</div>
+        <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center">
+          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.conferences}</div>
+          <div className="text-sm text-[var(--ink-muted)]">Conferences</div>
         </div>
-        <div className="rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft kawaii-card text-center">
-          <div className="font-display text-2xl font-semibold text-accent">{stats.cities}</div>
-          <div className="text-sm text-ink-muted">Cities</div>
+        <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center">
+          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.cities}</div>
+          <div className="text-sm text-[var(--ink-muted)]">Cities</div>
         </div>
       </div>
 
       {/* Filters */}
       <div className="mb-6 flex flex-wrap gap-4 items-center">
-        <span className="text-sm font-medium text-ink-muted">Type:</span>
+        <span className="text-sm font-medium text-[var(--ink-muted)]">Type:</span>
         <div className="flex flex-wrap gap-2">
           {TYPES.map(({ value, label }) => (
             <button
@@ -78,22 +78,22 @@ export default function TalksPage() {
               onClick={() => setTypeFilter(value)}
               className={`rounded-button px-3 py-1.5 text-sm font-medium transition-colors ${
                 typeFilter === value
-                  ? "bg-accent/15 text-accent"
-                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-ink-muted hover:border-accent-soft hover:text-[var(--ink)]"
+                  ? "bg-neutral-100 text-[var(--ink)]"
+                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)]"
               }`}
             >
               {label}
             </button>
           ))}
         </div>
-        <span className="text-sm font-medium text-ink-muted ml-4 sm:ml-0">Year:</span>
+        <span className="text-sm font-medium text-[var(--ink-muted)] ml-4 sm:ml-0">Year:</span>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setYearFilter("all")}
             className={`rounded-button px-3 py-1.5 text-sm font-medium transition-colors ${
               yearFilter === "all"
-                ? "bg-accent/15 text-accent"
-                : "bg-[var(--paper-elevated)] border border-[var(--border)] text-ink-muted hover:border-accent-soft hover:text-[var(--ink)]"
+                ? "bg-neutral-100 text-[var(--ink)]"
+                : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)]"
             }`}
           >
             All
@@ -104,9 +104,9 @@ export default function TalksPage() {
               onClick={() => setYearFilter(y)}
               className={`rounded-button px-3 py-1.5 text-sm font-medium transition-colors ${
                 yearFilter === y
-                  ? "bg-accent/15 text-accent"
-                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-ink-muted hover:border-accent-soft hover:text-[var(--ink)]"
-              }`}
+                  ? "bg-neutral-100 text-[var(--ink)]"
+                  : "bg-[var(--paper-elevated)] border border-[var(--border)] text-[var(--ink-muted)] hover:text-[var(--ink)]"
+            }`}
             >
               {y}
             </button>
@@ -119,12 +119,12 @@ export default function TalksPage() {
         {filtered.map((talk, i) => (
           <li
             key={`${talk.title}-${talk.event}-${talk.year}`}
-            className="rounded-kawaii border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft kawaii-card transition-all duration-200 hover:border-accent-soft hover:-translate-y-0.5"
+            className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 transition-colors hover:border-[var(--border-strong)]"
           >
             <h2 className="font-display font-semibold text-lg text-[var(--ink)]">
               {talk.title}
             </h2>
-            <p className="mt-1 text-sm text-ink-muted">
+            <p className="mt-1 text-sm text-[var(--ink-muted)]">
               {talk.event} · {talk.year} {talk.flag} {talk.location}
             </p>
             {talk.links && Object.keys(talk.links).length > 0 && (
@@ -134,7 +134,7 @@ export default function TalksPage() {
                     href={talk.links.summary}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button bg-accent/10 px-2.5 py-1 text-sm font-medium text-accent hover:bg-accent/20"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
                   >
                     Summary
                   </a>
@@ -144,7 +144,7 @@ export default function TalksPage() {
                     href={talk.links.slides}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button bg-accent/10 px-2.5 py-1 text-sm font-medium text-accent hover:bg-accent/20"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
                   >
                     Slides
                   </a>
@@ -154,7 +154,7 @@ export default function TalksPage() {
                     href={talk.links.abstract}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button bg-accent/10 px-2.5 py-1 text-sm font-medium text-accent hover:bg-accent/20"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
                   >
                     Abstract
                   </a>
@@ -164,7 +164,7 @@ export default function TalksPage() {
                     href={talk.links.paper}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button bg-accent/10 px-2.5 py-1 text-sm font-medium text-accent hover:bg-accent/20"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
                   >
                     Paper
                   </a>
@@ -174,7 +174,7 @@ export default function TalksPage() {
                     href={talk.links.poster}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button bg-accent/10 px-2.5 py-1 text-sm font-medium text-accent hover:bg-accent/20"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
                   >
                     Poster
                   </a>
@@ -184,7 +184,7 @@ export default function TalksPage() {
                     href={talk.links.photo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-button bg-accent/10 px-2.5 py-1 text-sm font-medium text-accent hover:bg-accent/20"
+                    className="rounded-button border border-[var(--border)] bg-[var(--paper)] px-2.5 py-1 text-sm font-medium text-[var(--ink)] hover:bg-neutral-100"
                   >
                     Photo
                   </a>
@@ -196,13 +196,13 @@ export default function TalksPage() {
       </ul>
 
       {filtered.length === 0 && (
-        <div className="rounded-kawaii border border-[var(--border)] bg-cream/50 p-8 text-center text-ink-muted">
+        <div className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-8 text-center text-[var(--ink-muted)]">
           No talks match the selected filters.
         </div>
       )}
 
-      <p className="mt-10 text-sm text-ink-muted">
-        <Link href="/" className="font-medium text-accent hover:underline">
+      <p className="mt-10 text-sm text-[var(--ink-muted)]">
+        <Link href="/" className="font-medium text-[var(--ink)] hover:underline">
           ← Back to home
         </Link>
       </p>
