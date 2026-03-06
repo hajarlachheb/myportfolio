@@ -1,6 +1,6 @@
-# Personal site — CV + Papers + Blog (+ Podcast later)
+# Personal site — CV + Papers + Talks + Blog (+ Podcast later)
 
-One site that works as your **CV** and **content hub**: papers, blog, and later a podcast section.
+One site that works as your **CV** and **content hub**: papers, talks, blog, and later a podcast section.
 
 ## Structure
 

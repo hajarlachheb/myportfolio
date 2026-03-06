@@ -26,7 +26,7 @@ export default function HomePage() {
             ♡
           </div>
           <p className="mb-2 text-sm font-medium uppercase tracking-wider text-accent">
-            Data Scientist & AI Researcher
+            Data Scientist & AI Researcher ·
           </p>
           <h1 className="font-display text-4xl font-semibold tracking-tight text-[var(--ink)] sm:text-5xl md:text-6xl">
             Hi, I'm {cv.name}
