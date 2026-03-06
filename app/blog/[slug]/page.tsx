@@ -25,22 +25,24 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <p className="mb-6 text-sm text-[var(--ink-muted)]">
+      <p className="mb-6 text-sm">
         <Link href="/blog" className="font-medium text-[var(--accent)] hover:underline">
           ← Blog
         </Link>
       </p>
       <article>
-        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
-          {post.title}
-        </h1>
-        <p className="mb-6 text-sm text-[var(--ink-muted)]">
-          {post.date}
-          {post.tags && post.tags.length > 0 && (
-            <> · {post.tags.join(", ")}</>
-          )}
-        </p>
-        <div className="prose max-w-none">
+        <div className="mb-8 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+            {post.title}
+          </h1>
+          <p className="text-sm text-[var(--accent)]/90">
+            {post.date}
+            {post.tags && post.tags.length > 0 && (
+              <> · {post.tags.join(", ")}</>
+            )}
+          </p>
+        </div>
+        <div className="prose max-w-none rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
       </article>

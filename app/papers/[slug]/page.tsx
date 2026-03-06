@@ -22,21 +22,23 @@ export default async function PaperPage({ params }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <p className="mb-6 text-sm text-[var(--ink-muted)]">
+      <p className="mb-6 text-sm">
         <Link href="/papers" className="font-medium text-[var(--accent)] hover:underline">
           ← Papers
         </Link>
       </p>
-      <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
-        {paper.title}
-      </h1>
-      <p className="text-[var(--ink)]">
-        {paper.authors}
-      </p>
-      <p className="mt-1 text-sm text-[var(--ink-muted)]">
-        {paper.venue} · {paper.year}
-        {paper.type && ` · ${paper.type}`}
-      </p>
+      <div className="mb-8 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+          {paper.title}
+        </h1>
+        <p className="text-[var(--ink)]">
+          {paper.authors}
+        </p>
+        <p className="mt-1 text-sm text-[var(--accent)]/90">
+          {paper.venue} · {paper.year}
+          {paper.type && ` · ${paper.type}`}
+        </p>
+      </div>
 
       <div className="mt-6 flex flex-wrap gap-3">
         {paper.pdf && (
@@ -62,7 +64,7 @@ export default async function PaperPage({ params }: Props) {
       </div>
 
       {paper.abstract && (
-        <section className="mt-8 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6">
+        <section className="mt-8 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft">
           <h2 className="font-display text-lg font-semibold text-[var(--ink)] mb-2">
             Abstract
           </h2>

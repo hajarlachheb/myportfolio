@@ -9,7 +9,7 @@ import { formatBlogDate } from "@/lib/blog-utils";
 function CoverImage({ post }: { post: BlogPost }) {
   if (!post.image) {
     return (
-      <div className="absolute inset-0 flex items-center justify-center text-[var(--ink-muted)] text-4xl font-display font-semibold opacity-30">
+      <div className="absolute inset-0 flex items-center justify-center text-[var(--accent)]/40 text-4xl font-display font-semibold">
         {post.title.charAt(0)}
       </div>
     );
@@ -68,12 +68,14 @@ export function BlogList({ posts }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
-        Blog
-      </h1>
-      <p className="text-[var(--ink-muted)] mb-8 text-lg">
-        ML insights, research notes, and tutorials.
-      </p>
+      <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+          Blog
+        </h1>
+        <p className="text-[var(--accent)]/90 text-lg">
+          ML insights, research notes, and tutorials.
+        </p>
+      </div>
 
       {/* Stats */}
       <div className="mb-8 flex flex-wrap gap-6 text-sm">
@@ -81,7 +83,7 @@ export function BlogList({ posts }: Props) {
           {posts.length} {posts.length === 1 ? "Post" : "Posts"}
         </span>
         {topicCount > 0 && (
-          <span className="text-[var(--ink-muted)]">
+          <span className="text-[var(--accent)]/90">
             {topicCount} {topicCount === 1 ? "Topic" : "Topics"}
           </span>
         )}
@@ -124,7 +126,7 @@ export function BlogList({ posts }: Props) {
           <li key={post.slug}>
             <Link
               href={`/blog/${post.slug}`}
-              className="group block overflow-hidden rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] transition-colors hover:border-[var(--accent)]"
+              className="group block overflow-hidden rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] shadow-soft transition-all duration-300 hover:border-[var(--accent)] hover:shadow-md"
             >
               {/* Cover image or placeholder */}
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--paper)]">
@@ -198,7 +200,7 @@ export function BlogList({ posts }: Props) {
         </nav>
       ) : null}
 
-      <p className="mt-10 text-sm text-[var(--ink-muted)]">
+      <p className="mt-10 text-sm">
         <Link href="/" className="font-medium text-[var(--accent)] hover:underline">
           ← Back to home
         </Link>

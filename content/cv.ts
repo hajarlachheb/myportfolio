@@ -4,9 +4,9 @@
 export const cv = {
   name: "Hajar Lachheb",
   nickname: "Qamar",
-  title: "AI Research Engineer | Machine Learning | Open Science",
-  subtitle: "NLP, transformer models, reproducible ML pipelines & knowledge-driven systems",
-  tagline: "AI Research Engineer and Data Scientist with 3+ years building ML systems and data-driven research tools.",
+  title: "AI Engineer and PhD Candidate in AI, Privacy, Security",
+  subtitle: "NLP, privacy, security & reproducible ML pipelines",
+  tagline: "AI Engineer and PhD Candidate in AI, Privacy and Security. Building ML systems and research in privacy, unlearning, and knowledge-driven AI.",
   email: "hajarlachheb.dev@gmail.com",
   phone: "+34 617 963 493",
   website: "https://hajarlachheb.com",

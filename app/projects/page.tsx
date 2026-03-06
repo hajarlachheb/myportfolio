@@ -9,26 +9,27 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2 animate-fade-in">
-        Projects
-      </h1>
-      <p className="text-[var(--ink-muted)] mb-10 text-lg animate-fade-in animation-delay-100">
-        Things I've built — from AI & data to community and hackathons.
-      </p>
+      <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+          Projects
+        </h1>
+        <p className="text-[var(--accent)]/90 text-lg">
+          Things I've built — from AI & data to community and hackathons.
+        </p>
+      </div>
 
       <ul className="space-y-4">
         {cv.projects.map((project, i) => (
           <li
             key={project.name}
-            className="animate-fade-in rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6 transition-colors hover:border-[var(--border-strong)]"
-            style={{ animationDelay: `${(i + 2) * 100}ms` }}
+            className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft transition-all duration-300 hover:border-[var(--accent)]/50"
           >
             <div className="flex flex-wrap items-start justify-between gap-2">
               <h2 className="font-display text-xl font-semibold text-[var(--ink)]">
                 {project.name}
               </h2>
               {project.highlight && (
-                <span className="rounded-button bg-neutral-100 px-3 py-1 text-xs font-medium text-[var(--ink-muted)]">
+                <span className="rounded-button bg-[var(--accent-soft)] px-3 py-1 text-xs font-medium text-[var(--accent)]">
                   {project.highlight}
                 </span>
               )}
@@ -53,7 +54,7 @@ export default function ProjectsPage() {
         ))}
       </ul>
 
-      <p className="mt-10 text-sm text-[var(--ink-muted)]">
+      <p className="mt-10 text-sm">
         <Link href="/" className="font-medium text-[var(--accent)] hover:underline">
           ← Back to home
         </Link>

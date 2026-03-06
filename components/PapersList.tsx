@@ -11,12 +11,14 @@ export function PapersList({ papers }: Props) {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
-      <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
-        Papers
-      </h1>
-      <p className="text-[var(--ink-muted)] mb-8 text-lg">
-        Click a paper to preview the PDF below.
-      </p>
+      <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
+        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+          Papers
+        </h1>
+        <p className="text-[var(--accent)]/90 text-lg">
+          Click a paper to preview the PDF below.
+        </p>
+      </div>
 
       <ul className="space-y-3">
         {papers.map((paper) => (
@@ -24,10 +26,10 @@ export function PapersList({ papers }: Props) {
             <button
               type="button"
               onClick={() => setPreviewPdf(paper.pdf ?? null)}
-              className={`group w-full text-left rounded-card border bg-[var(--paper-elevated)] p-5 transition-colors hover:border-[var(--accent)] ${
+              className={`group w-full text-left rounded-card border bg-[var(--paper-elevated)] p-5 shadow-soft transition-all duration-300 hover:border-[var(--accent)] ${
                 previewPdf === paper.pdf
                   ? "border-[var(--accent)] ring-1 ring-[var(--accent)]"
-                  : "border-[var(--border)] hover:border-[var(--border-strong)]"
+                  : "border-[var(--border)]"
               }`}
             >
               <h2 className="font-display font-semibold text-lg text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors">
@@ -61,8 +63,8 @@ export function PapersList({ papers }: Props) {
 
       {/* Inline PDF preview */}
       {previewPdf && (
-        <section className="mt-10 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] overflow-hidden">
-          <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--paper)] px-4 py-2">
+        <section className="mt-10 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] overflow-hidden shadow-soft">
+          <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--accent-soft)]/30 px-4 py-2">
             <span className="text-sm font-medium text-[var(--ink)]">Preview</span>
             <button
               type="button"
@@ -82,7 +84,7 @@ export function PapersList({ papers }: Props) {
         </section>
       )}
 
-      <p className="mt-10 text-sm text-[var(--ink-muted)]">
+      <p className="mt-10 text-sm">
         <Link href="/" className="font-medium text-[var(--accent)] hover:underline">
           ← Back to home
         </Link>
