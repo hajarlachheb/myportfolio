@@ -42,10 +42,10 @@ export default function TalksPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
-        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+        <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)] mb-2">
           Public Talks
         </h1>
-        <p className="text-[var(--accent)]/90 text-lg">
+        <p className="text-sm text-[var(--accent)]/90">
           AI meetups, tech talks & conferences.
         </p>
       </div>
@@ -53,19 +53,19 @@ export default function TalksPage() {
       {/* Stats */}
       <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
         <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center shadow-soft">
-          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.talks}</div>
+          <div className="font-display text-lg font-semibold text-[var(--ink)]">{stats.talks}</div>
           <div className="text-sm text-[var(--accent)]/90">Talks</div>
         </div>
         <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center shadow-soft">
-          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.meetups}</div>
+          <div className="font-display text-lg font-semibold text-[var(--ink)]">{stats.meetups}</div>
           <div className="text-sm text-[var(--accent)]/90">Meetups</div>
         </div>
         <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center shadow-soft">
-          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.conferences}</div>
+          <div className="font-display text-lg font-semibold text-[var(--ink)]">{stats.conferences}</div>
           <div className="text-sm text-[var(--accent)]/90">Conferences</div>
         </div>
         <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 text-center shadow-soft">
-          <div className="font-display text-2xl font-semibold text-[var(--ink)]">{stats.cities}</div>
+          <div className="font-display text-lg font-semibold text-[var(--ink)]">{stats.cities}</div>
           <div className="text-sm text-[var(--accent)]/90">Cities</div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function TalksPage() {
             key={`${talk.title}-${talk.event}-${talk.year}`}
             className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft transition-all duration-300 hover:border-[var(--accent)]/50"
           >
-            <h2 className="font-display font-semibold text-lg text-[var(--ink)]">
+            <h2 className="font-display font-semibold text-sm text-[var(--ink)]">
               {talk.title}
             </h2>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">

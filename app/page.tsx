@@ -52,13 +52,13 @@ export default function HomePage() {
         </div>
 
         <div className="min-w-0 flex-1 opacity-0 animate-fade-in animation-delay-200">
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] sm:text-4xl">
+          <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)]">
             {cv.name}
             <span className="text-[var(--accent)] font-normal">, AI Engineer & PhD candidate</span>
           </h1>
-          <ul className="mt-4 space-y-1.5">
+          <ul className="mt-3 space-y-1">
             {HERO_BULLETS.map((line, i) => (
-              <li key={i} className="flex items-start gap-2 text-base sm:text-lg text-[var(--ink)]">
+              <li key={i} className="flex items-start gap-2 text-sm text-[var(--ink)]">
                 <span className="shrink-0 font-medium text-[var(--accent)]" aria-hidden>·</span>
                 <span>{line}</span>
               </li>
@@ -94,7 +94,7 @@ export default function HomePage() {
             <a href="https://orcid.org/0009-0001-0001-5830" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[var(--accent)] hover:underline">ORCID</a>
             <Link
               href="/cv"
-              className="ml-auto inline-flex items-center gap-2 rounded-button bg-[var(--accent)] px-4 py-2.5 text-sm font-medium text-white shadow-soft transition-all duration-300 hover:bg-[var(--accent-dark)] hover:shadow-md hover:-translate-y-0.5"
+              className="ml-auto inline-flex items-center gap-2 rounded-button bg-[var(--accent)] px-3 py-2 text-sm font-medium text-white shadow-soft transition-all duration-300 hover:bg-[var(--accent-dark)] hover:shadow-md hover:-translate-y-0.5"
             >
               Download CV
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
@@ -113,15 +113,15 @@ export default function HomePage() {
             style={{ animationDelay: `${550 + index * 80}ms`, animationFillMode: "forwards" }}
           >
             <div className="flex items-center gap-2">
-              <span className="text-xl transition-transform duration-300 group-hover:scale-110" aria-hidden>{card.icon}</span>
-              <h2 className="font-display text-lg font-semibold text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors duration-300">
+              <span className="text-base transition-transform duration-300 group-hover:scale-110" aria-hidden>{card.icon}</span>
+              <h2 className="font-display text-sm font-semibold text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors duration-300">
                 {card.title}
               </h2>
             </div>
-            <p className="mt-1 text-sm text-[var(--accent)]/90">
+            <p className="mt-0.5 text-sm text-[var(--accent)]/90">
               {card.description}
             </p>
-            <ul className="mt-3 space-y-1 text-sm text-[var(--ink)]">
+            <ul className="mt-2 space-y-0.5 text-sm text-[var(--ink)]">
               {card.bullets.map((b, i) => (
                 <li key={i}><span className="text-[var(--accent)]">·</span> {b}</li>
               ))}

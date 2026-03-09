@@ -21,9 +21,12 @@ export function ProfileImage({ name }: Props) {
     );
   }
 
+  const basePath = typeof process.env.NEXT_PUBLIC_BASE_PATH === "string" ? process.env.NEXT_PUBLIC_BASE_PATH : "";
+  const src = `${basePath}/profilepic.png`;
+
   return (
     <Image
-      src="/profilepic.png"
+      src={src}
       alt={name}
       fill
       className="object-cover"

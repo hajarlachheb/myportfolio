@@ -28,10 +28,10 @@ export default async function PaperPage({ params }: Props) {
         </Link>
       </p>
       <div className="mb-8 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
-        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+        <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)] mb-2">
           {paper.title}
         </h1>
-        <p className="text-[var(--ink)]">
+        <p className="text-sm text-[var(--ink)]">
           {paper.authors}
         </p>
         <p className="mt-1 text-sm text-[var(--accent)]/90">
@@ -65,10 +65,10 @@ export default async function PaperPage({ params }: Props) {
 
       {paper.abstract && (
         <section className="mt-8 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-6 shadow-soft">
-          <h2 className="font-display text-lg font-semibold text-[var(--ink)] mb-2">
+          <h2 className="font-display text-sm font-semibold text-[var(--ink)] mb-2">
             Abstract
           </h2>
-          <p className="leading-relaxed text-[var(--ink)]">{paper.abstract}</p>
+          <p className="text-sm leading-relaxed text-[var(--ink)]">{paper.abstract}</p>
         </section>
       )}
     </div>

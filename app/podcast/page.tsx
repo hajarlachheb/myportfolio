@@ -9,10 +9,10 @@ export default function PodcastPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
-        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+        <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)] mb-2">
           Podcast
         </h1>
-        <p className="text-[var(--accent)]/90 text-lg">
+        <p className="text-sm text-[var(--accent)]/90">
           Episode list and show notes will go here. Add a content source (e.g. content/podcast.ts or Markdown per episode) when ready.
         </p>
       </div>

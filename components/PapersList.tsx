@@ -12,10 +12,10 @@ export function PapersList({ papers }: Props) {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
-        <h1 className="font-display text-3xl font-semibold tracking-tight text-[var(--ink)] mb-2">
+        <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)] mb-2">
           Papers
         </h1>
-        <p className="text-[var(--accent)]/90 text-lg">
+        <p className="text-sm text-[var(--accent)]/90">
           Click a paper to preview the PDF below.
         </p>
       </div>
@@ -32,7 +32,7 @@ export function PapersList({ papers }: Props) {
                   : "border-[var(--border)]"
               }`}
             >
-              <h2 className="font-display font-semibold text-lg text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors">
+              <h2 className="font-display font-semibold text-sm text-[var(--ink)] group-hover:text-[var(--accent)] transition-colors">
                 {paper.title}
               </h2>
               <p className="mt-1 text-sm text-[var(--ink-muted)]">

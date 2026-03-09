@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -21,11 +22,14 @@ export function Nav() {
       <nav className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
         <Link
           href="/"
-          className="font-display text-lg font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent)]"
+          className="font-display text-sm font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent)]"
         >
           Hajar L.
         </Link>
-        <ul className="flex items-center gap-1 flex-wrap justify-end">
+        <ul className="flex items-center gap-2 flex-wrap justify-end">
+          <li>
+            <ThemeToggle />
+          </li>
           {links.map(({ href, label }) => {
             const isActive =
               pathname === href || (href !== "/" && pathname.startsWith(href));
@@ -33,7 +37,7 @@ export function Nav() {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`rounded-button px-3 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-button px-2.5 py-1.5 text-sm font-medium transition-colors ${
                     isActive
                       ? "text-[var(--accent)] bg-[var(--accent-soft)]"
                       : "text-[var(--ink-muted)] hover:text-[var(--accent)]"

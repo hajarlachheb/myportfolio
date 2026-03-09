@@ -3,6 +3,7 @@ import { Crimson_Pro, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { ThemeScript } from "@/app/ThemeScript";
 
 const display = Crimson_Pro({
   variable: "--font-display",
@@ -28,8 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col font-body antialiased">
+        <ThemeScript />
         <Nav />
         <main className="relative flex-1 flex flex-col min-h-[calc(100vh-8rem)]">
           {children}

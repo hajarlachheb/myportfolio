@@ -2,16 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light theme: dark blue text palette */
 :root {
-  --ink: #171717;
-  --ink-muted: #525252;
-  --paper: #fafafa;
+  --ink: #1e3a5f;
+  --ink-muted: #334155;
+  --paper: #f8fafc;
   --paper-elevated: #ffffff;
-  --accent: #2563eb;
-  --accent-dark: #1d4ed8;
-  --accent-soft: #eff6ff;
-  --border: #e5e5e5;
-  --border-strong: #a3a3a3;
+  --accent: #1d4ed8;
+  --accent-dark: #1e40af;
+  --accent-soft: #dbeafe;
+  --border: #e2e8f0;
+  --border-strong: #94a3b8;
+}
+
+/* Dark theme */
+.dark {
+  --ink: #e2e8f0;
+  --ink-muted: #94a3b8;
+  --paper: #0f172a;
+  --paper-elevated: #1e293b;
+  --accent: #60a5fa;
+  --accent-dark: #93c5fd;
+  --accent-soft: #1e3a5f;
+  --border: #334155;
+  --border-strong: #64748b;
 }
 
 html {
@@ -22,6 +36,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   min-height: 100vh;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 ::selection {
@@ -51,7 +66,6 @@ body {
 .animation-delay-700 { animation-delay: 700ms; }
 .animation-delay-800 { animation-delay: 800ms; }
 
-/* Optional: subtle gradient tint for hero (use on a wrapper) */
 .hero-tint {
   background: linear-gradient(135deg, var(--paper) 0%, var(--accent-soft) 100%);
 }
