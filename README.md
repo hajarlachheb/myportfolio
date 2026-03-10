@@ -35,6 +35,7 @@ Output is in the `out/` folder. For local testing with basePath (e.g. `/myportfo
 - **Profile photo (home page)**: Put your picture at **`public/profile.jpg`** (or rename to `profile.jpg` if you use PNG). If the file is missing, your initials are shown.
 - **CV**: Edit `content/cv.ts`. Optionally add `public/cv.pdf` and set `pdfUrl: "/cv.pdf"` for a download link.
 - **Papers**: Add entries to `content/papers.ts`. Optional: put PDFs in `public/papers/` and set `pdf: "/papers/your-file.pdf"`.
+- **Projects**: Edit `content/projects.ts`. Each project can have `name`, `summary`, `tags`, `image` (e.g. `"/projects/my-app.png"` in `public/projects/`), `codeUrl`, `demoUrl`, `materials` (extra links), and `featured: true` for a "Featured" pill.
 - **Blog**: Add `.md` files in `content/blog/` with frontmatter:
   ```yaml
   ---

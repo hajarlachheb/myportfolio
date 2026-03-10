@@ -10,13 +10,6 @@ const HERO_BULLETS = [
 
 const OVERVIEW_CARDS = [
   {
-    href: "/blog",
-    icon: "📝",
-    title: "Blog",
-    description: "Insights and tutorials",
-    bullets: ["ML tutorials", "Research notes", "Essays"],
-  },
-  {
     href: "/talks",
     icon: "🎤",
     title: "Talks",
