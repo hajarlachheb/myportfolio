@@ -77,6 +77,19 @@ export const projects: Project[] = [
     ],
     featured: true,
   },
+  {
+    name: "AI Knowledge Graph for Company Knowledge Management",
+    summary: "Full AI PM case study: designing an AI-powered knowledge graph that ingests from Notion, Slack, GitHub, and meetings to make company knowledge searchable, connected, and reusable. Includes Neo4j graph architecture, LangChain RAG pipeline, personas, experimentation plan, and roadmap.",
+    section: "PM",
+    tags: ["Knowledge Graph", "Enterprise AI", "LLM", "Neo4j", "LangChain", "Product Management"],
+    image: undefined,
+    codeUrl: undefined,
+    demoUrl: undefined,
+    materials: [
+      { label: "Case Study", url: "/blog/ai-knowledge-graph-company-km" },
+    ],
+    featured: true,
+  },
 ];
 
 /** Projects grouped by section in display order. */
