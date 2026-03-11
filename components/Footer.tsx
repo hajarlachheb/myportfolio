@@ -54,6 +54,9 @@ export function Footer() {
           <Link href="/talks" className="hover:text-[var(--accent)] transition-colors">
             Talks
           </Link>
+          <Link href="/blog" className="hover:text-[var(--accent)] transition-colors">
+            Blog
+          </Link>
         </div>
       </div>
     </footer>

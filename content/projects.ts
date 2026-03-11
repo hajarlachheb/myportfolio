@@ -64,6 +64,19 @@ export const projects: Project[] = [
     materials: undefined,
     featured: false,
   },
+  {
+    name: "Bias-Aware AI Resume Screening System",
+    summary: "Full AI PM case study: designing an AI-assisted resume screening system with semantic matching, bias detection dashboard, explainability panel, and EEOC compliance. Includes personas, user research, MVP spec, AI architecture, experimentation plan, and roadmap.",
+    section: "PM",
+    tags: ["AI Ethics", "Product Management", "HR Tech", "Fairness", "spaCy", "Hugging Face"],
+    image: undefined,
+    codeUrl: undefined,
+    demoUrl: undefined,
+    materials: [
+      { label: "Case Study", url: "/blog/bias-aware-ai-resume-screening" },
+    ],
+    featured: true,
+  },
 ];
 
 /** Projects grouped by section in display order. */

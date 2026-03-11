@@ -10,6 +10,13 @@ const HERO_BULLETS = [
 
 const OVERVIEW_CARDS = [
   {
+    href: "/blog",
+    icon: "📝",
+    title: "Blog",
+    description: "Case studies & deep dives",
+    bullets: ["AI PM case studies", "Product thinking", "Ethics & fairness"],
+  },
+  {
     href: "/talks",
     icon: "🎤",
     title: "Talks",
