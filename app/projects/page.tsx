@@ -119,17 +119,26 @@ export default function ProjectsPage() {
                             Demo
                           </a>
                         )}
-                        {project.materials?.slice(0, 2).map((m) => (
-                          <a
-                            key={m.label}
-                            href={m.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 rounded-button border border-[var(--border)] px-2 py-1 text-[10px] font-medium text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                          >
-                            {m.label}
-                          </a>
-                        ))}
+                        {project.materials?.slice(0, 2).map((m) => {
+                          const isInternal = m.url.startsWith("/");
+                          const className =
+                            "inline-flex items-center gap-1 rounded-button border border-[var(--border)] px-2 py-1 text-[10px] font-medium text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]";
+                          return isInternal ? (
+                            <Link key={m.label} href={m.url} className={className}>
+                              {m.label}
+                            </Link>
+                          ) : (
+                            <a
+                              key={m.label}
+                              href={m.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={className}
+                            >
+                              {m.label}
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
                   </article>
