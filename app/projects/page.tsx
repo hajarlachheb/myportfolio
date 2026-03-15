@@ -7,6 +7,8 @@ export const metadata = {
   description: "Side projects, research, and things I build.",
 };
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 function ProjectImage({ project }: { project: Project }) {
   if (!project.image) {
     return (
@@ -28,7 +30,7 @@ function ProjectImage({ project }: { project: Project }) {
   }
   return (
     <Image
-      src={project.image}
+      src={`${base}${project.image}`}
       alt=""
       width={400}
       height={225}

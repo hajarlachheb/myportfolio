@@ -23,7 +23,7 @@ export function Nav() {
           href="/"
           className="flex items-center gap-2 font-display text-sm font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent)]"
         >
-          <Image src="/logo.png" alt="HL" width={28} height={28} className="rounded-sm" />
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo.png`} alt="HL" width={28} height={28} className="w-7 h-auto rounded-sm" />
           Hajar L.
         </Link>
         <ul className="flex items-center gap-2 flex-wrap justify-end">
