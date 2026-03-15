@@ -31,7 +31,7 @@ function Bar({ value, max, label, color = ACCENT }: { value: number; max: number
       <span className="w-32 sm:w-40 text-xs text-[var(--ink-muted)] text-right shrink-0">{label}</span>
       <div className="flex-1 h-6 rounded-full bg-[var(--paper)] border border-[var(--border)] overflow-hidden relative">
         <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, background: color }} />
-        <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold mix-blend-difference text-white">{value}%</span>
+        <span className="absolute inset-0 flex items-center justify-center text-xs font-bold mix-blend-difference text-white">{value}%</span>
       </div>
     </div>
   );
@@ -42,7 +42,7 @@ function MCard({ value, label, sub, color = ACCENT }: { value: string; label: st
     <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft text-center">
       <div className="font-display text-xl font-bold" style={{ color }}>{value}</div>
       <div className="text-xs font-medium text-[var(--ink)] mt-1">{label}</div>
-      {sub && <div className="text-[10px] text-[var(--ink-muted)] mt-0.5">{sub}</div>}
+      {sub && <div className="text-xs text-[var(--ink-muted)] mt-0.5">{sub}</div>}
     </div>
   );
 }
@@ -81,8 +81,8 @@ export function KGVisuals() {
       <Sec>
         <SH num={2} title="The Problem" />
         <KnowledgeFragmentation />
-        <div className="mt-6 rounded-card border border-amber-200 dark:border-amber-900 bg-amber-50 dark:bg-amber-950/30 p-4">
-          <p className="text-xs font-medium text-amber-700 dark:text-amber-400">
+        <div className="mt-6 rounded-card border border-amber-200 bg-amber-50 p-4">
+          <p className="text-xs font-medium text-amber-700">
             McKinsey research: employees spend <strong>1.8 hours per day</strong> — nearly 20% of a work week — searching for and gathering information. For a 500-person company, that is <strong>~180,000 hours/year</strong> of lost productivity.
           </p>
         </div>
@@ -97,7 +97,7 @@ export function KGVisuals() {
             <p>Companies like Google (NotebookLM), Microsoft (Copilot), Atlassian (Rovo), and Glean are investing heavily. The opportunity is in the <strong className="text-[var(--ink)]">mid-market</strong> — companies too large for tribal knowledge, too small for enterprise solutions.</p>
           </div>
           <div>
-            <div className="text-[10px] font-semibold text-[var(--ink-muted)] uppercase tracking-wider mb-2">Existing Solutions Gap</div>
+            <div className="text-xs font-semibold text-[var(--ink-muted)] uppercase tracking-wider mb-2">Existing Solutions Gap</div>
             <div className="space-y-2">
               {[
                 { tool: "Confluence", gap: "Search is keyword-only, no relationships" },
@@ -163,7 +163,7 @@ export function KGVisuals() {
             <div className="text-center">
               <div className="text-2xl mb-2">🚫</div>
               <div className="text-xs font-bold text-[var(--ink)] mb-1">Anti-Persona</div>
-              <p className="text-[11px] text-[var(--ink-muted)] leading-snug max-w-xs">
+              <p className="text-xs text-[var(--ink-muted)] leading-snug max-w-xs">
                 Someone who wants to <strong>surveil employees</strong> or track individual productivity.
                 This system is for knowledge access, not employee monitoring.
                 No individual activity tracking or performance metrics.
@@ -186,7 +186,7 @@ export function KGVisuals() {
               <span className="text-xl">{m.icon}</span>
               <div>
                 <div className="text-xs font-bold text-[var(--ink)]">{m.method}</div>
-                <div className="text-[10px] text-[var(--ink-muted)]">{m.n}</div>
+                <div className="text-xs text-[var(--ink-muted)]">{m.n}</div>
               </div>
             </div>
           ))}
@@ -202,11 +202,11 @@ export function KGVisuals() {
         <div className="grid sm:grid-cols-2 gap-3">
           <div className="rounded-card border border-[#7c3aed]/20 bg-[#ede9fe]/20 p-4">
             <p className="text-xs italic text-[var(--ink-muted)]">&ldquo;I spent an entire afternoon trying to figure out why we migrated from Postgres to Snowflake. The answer was in a meeting recording nobody tagged.&rdquo;</p>
-            <p className="text-[10px] text-[var(--ink-muted)] mt-1">— Senior Engineer, 300-person company</p>
+            <p className="text-xs text-[var(--ink-muted)] mt-1">— Senior Engineer, 300-person company</p>
           </div>
           <div className="rounded-card border border-[#7c3aed]/20 bg-[#ede9fe]/20 p-4">
             <p className="text-xs italic text-[var(--ink-muted)]">&ldquo;Every new hire asks me the same 20 questions. I wish I could just point them to a system that has all the answers with context.&rdquo;</p>
-            <p className="text-[10px] text-[var(--ink-muted)] mt-1">— Tech Lead, onboarding mentor</p>
+            <p className="text-xs text-[var(--ink-muted)] mt-1">— Tech Lead, onboarding mentor</p>
           </div>
         </div>
       </Sec>
@@ -259,7 +259,7 @@ export function KGVisuals() {
             { cat: "Hosting", tool: "AWS / GCP" },
           ].map((t) => (
             <div key={t.cat} className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-2.5 shadow-soft">
-              <div className="text-[10px] font-bold uppercase" style={{ color: ACCENT }}>{t.cat}</div>
+              <div className="text-xs font-bold uppercase" style={{ color: ACCENT }}>{t.cat}</div>
               <div className="text-xs text-[var(--ink)] mt-0.5">{t.tool}</div>
             </div>
           ))}
@@ -312,8 +312,8 @@ export function KGVisuals() {
             { label: "Audit Trail", desc: "Full log of what was ingested, when, and from where. Admin visibility into graph contents" },
           ].map((c) => (
             <div key={c.label} className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-2 flex gap-2">
-              <span className="text-[10px] font-bold text-white rounded px-1.5 py-0.5 shrink-0" style={{ background: ACCENT }}>{c.label}</span>
-              <span className="text-[11px] text-[var(--ink-muted)]">{c.desc}</span>
+              <span className="text-xs font-bold text-white rounded px-1.5 py-0.5 shrink-0" style={{ background: ACCENT }}>{c.label}</span>
+              <span className="text-xs text-[var(--ink-muted)]">{c.desc}</span>
             </div>
           ))}
         </div>
@@ -341,7 +341,7 @@ export function KGVisuals() {
           <MCard value="<2s" label="Query latency" sub="Time to return results" color="#6b7280" />
         </div>
         <div className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-4">
-          <h4 className="text-[10px] font-bold text-[var(--ink)] uppercase tracking-wider mb-2">Guardrail Metrics</h4>
+          <h4 className="text-xs font-bold text-[var(--ink)] uppercase tracking-wider mb-2">Guardrail Metrics</h4>
           <div className="flex flex-wrap gap-4 text-xs text-[var(--ink-muted)]">
             <span>• No private data exposed in search</span>
             <span>• Ingestion freshness &lt; 1 hour</span>
@@ -362,10 +362,10 @@ export function KGVisuals() {
           ].map((e) => (
             <div key={e.id} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[10px] font-bold text-white rounded px-1.5 py-0.5" style={{ background: ACCENT }}>{e.id}</span>
+                <span className="text-xs font-bold text-white rounded px-1.5 py-0.5" style={{ background: ACCENT }}>{e.id}</span>
                 <h4 className="text-xs font-bold text-[var(--ink)]">{e.title}</h4>
               </div>
-              <div className="space-y-1.5 text-[11px] text-[var(--ink-muted)]">
+              <div className="space-y-1.5 text-xs text-[var(--ink-muted)]">
                 <p><strong className="text-[var(--ink)]">H:</strong> {e.hypothesis}</p>
                 <p><strong className="text-[var(--ink)]">Design:</strong> {e.design}</p>
                 <p><strong className="text-[var(--ink)]">Metrics:</strong> {e.metrics}</p>
@@ -401,20 +401,20 @@ export function KGVisuals() {
             <div key={row.label} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-3 shadow-soft">
               <div className="text-xs font-bold text-[var(--ink)] mb-2">{row.label}</div>
               <div className="flex items-center gap-3 mb-1">
-                <span className="text-[10px] text-[var(--ink-muted)] w-16 shrink-0">Before</span>
+                <span className="text-xs text-[var(--ink-muted)] w-16 shrink-0">Before</span>
                 <div className="flex-1 h-4 bg-[var(--paper)] border border-[var(--border)] rounded-full overflow-hidden">
                   <div className="h-full rounded-full bg-red-400/60" style={{ width: `${row.pctB}%` }} />
                 </div>
-                <span className="text-[10px] font-medium text-[var(--ink-muted)] w-20 text-right">{row.before}</span>
+                <span className="text-xs font-medium text-[var(--ink-muted)] w-20 text-right">{row.before}</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-[10px] text-[var(--ink-muted)] w-16 shrink-0">After</span>
+                <span className="text-xs text-[var(--ink-muted)] w-16 shrink-0">After</span>
                 <div className="flex-1 h-4 bg-[var(--paper)] border border-[var(--border)] rounded-full overflow-hidden">
                   <div className="h-full rounded-full bg-green-500/70" style={{ width: `${row.pctA}%` }} />
                 </div>
-                <span className="text-[10px] font-medium text-green-600 w-20 text-right">{row.after}</span>
+                <span className="text-xs font-medium text-green-600 w-20 text-right">{row.after}</span>
               </div>
-              <div className="text-[10px] font-medium mt-1 text-right" style={{ color: ACCENT }}>{row.imp}</div>
+              <div className="text-xs font-medium mt-1 text-right" style={{ color: ACCENT }}>{row.imp}</div>
             </div>
           ))}
         </div>
@@ -432,7 +432,7 @@ export function KGVisuals() {
           ].map((d) => (
             <div key={d.title} className="rounded-card border border-[#7c3aed]/20 bg-[#ede9fe]/10 p-4">
               <h4 className="text-xs font-bold mb-1" style={{ color: ACCENT }}>{d.title}</h4>
-              <p className="text-[11px] text-[var(--ink-muted)] leading-snug">{d.desc}</p>
+              <p className="text-xs text-[var(--ink-muted)] leading-snug">{d.desc}</p>
             </div>
           ))}
         </div>
@@ -446,7 +446,7 @@ export function KGVisuals() {
               "Enterprise sales require security review. Building with access control, audit logs, and SOC 2 readiness from day one saves months of retrofitting.",
               "Knowledge graphs compound in value. The first 100 nodes are marginally useful. At 10,000 nodes, the relationship discovery becomes magical. Communicate this to stakeholders.",
             ].map((l, i) => (
-              <li key={i} className="flex gap-2 text-[11px] text-[var(--ink-muted)] leading-snug">
+              <li key={i} className="flex gap-2 text-xs text-[var(--ink-muted)] leading-snug">
                 <span className="font-bold shrink-0" style={{ color: ACCENT }}>{i + 1}.</span>
                 <span>{l}</span>
               </li>
@@ -473,7 +473,7 @@ export function KGVisuals() {
           ].map((t) => (
             <div key={t.tool} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-2.5 text-center shadow-soft">
               <div className="text-xs font-bold text-[var(--ink)]">{t.tool}</div>
-              <div className="text-[10px] text-[var(--ink-muted)] mt-0.5">{t.use}</div>
+              <div className="text-xs text-[var(--ink-muted)] mt-0.5">{t.use}</div>
             </div>
           ))}
         </div>
@@ -494,25 +494,25 @@ function PersonaCard({ name, role, avatar, color, goals, frustrations, quote, sc
         <div className="h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0" style={{ background: color }}>{avatar}</div>
         <div>
           <div className="text-xs font-bold text-[var(--ink)]">{name}</div>
-          <div className="text-[10px] text-[var(--ink-muted)]">{role}</div>
+          <div className="text-xs text-[var(--ink-muted)]">{role}</div>
         </div>
       </div>
       <div className="p-4 space-y-3">
         <div>
-          <div className="text-[10px] font-bold text-green-600 uppercase tracking-wider mb-1">Goals</div>
-          {goals.map((g) => (<div key={g} className="text-[11px] text-[var(--ink-muted)] flex gap-1.5"><span className="text-green-500">✓</span>{g}</div>))}
+          <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">Goals</div>
+          {goals.map((g) => (<div key={g} className="text-xs text-[var(--ink-muted)] flex gap-1.5"><span className="text-green-500">✓</span>{g}</div>))}
         </div>
         <div>
-          <div className="text-[10px] font-bold text-red-500 uppercase tracking-wider mb-1">Frustrations</div>
-          {frustrations.map((f) => (<div key={f} className="text-[11px] text-[var(--ink-muted)] flex gap-1.5"><span className="text-red-400">✗</span>{f}</div>))}
+          <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-1">Frustrations</div>
+          {frustrations.map((f) => (<div key={f} className="text-xs text-[var(--ink-muted)] flex gap-1.5"><span className="text-red-400">✗</span>{f}</div>))}
         </div>
         <div className="rounded-card bg-[var(--paper)] border border-[var(--border)] p-3">
-          <p className="text-[11px] italic text-[var(--ink-muted)]">&ldquo;{quote}&rdquo;</p>
+          <p className="text-xs italic text-[var(--ink-muted)]">&ldquo;{quote}&rdquo;</p>
         </div>
         {scenario && (
           <div className="rounded-card bg-[#ede9fe]/20 border border-[#7c3aed]/20 p-3">
-            <div className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: ACCENT }}>Scenario</div>
-            <p className="text-[11px] text-[var(--ink-muted)] leading-snug">{scenario}</p>
+            <div className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: ACCENT }}>Scenario</div>
+            <p className="text-xs text-[var(--ink-muted)] leading-snug">{scenario}</p>
           </div>
         )}
       </div>
@@ -534,7 +534,7 @@ function KnowledgeFragmentation() {
       <h3 className="text-xs font-bold text-[var(--ink)] uppercase tracking-wider mb-3">Where Company Knowledge Lives (Fragmented)</h3>
       <div className="flex h-8 rounded-full overflow-hidden border border-[var(--border)] mb-3">
         {sources.map((s) => (
-          <div key={s.name} className="flex items-center justify-center text-[9px] font-bold text-white" style={{ width: `${s.pct}%`, background: s.color }} title={`${s.name}: ${s.pct}%`}>
+          <div key={s.name} className="flex items-center justify-center text-xs font-bold text-white" style={{ width: `${s.pct}%`, background: s.color }} title={`${s.name}: ${s.pct}%`}>
             {s.pct >= 10 ? `${s.icon} ${s.pct}%` : ""}
           </div>
         ))}
@@ -602,7 +602,7 @@ function KnowledgeGraphDemo() {
       </div>
       <div className="flex flex-wrap gap-3 justify-center mt-2">
         {Object.entries(typeColors).map(([type, color]) => (
-          <div key={type} className="flex items-center gap-1.5 text-[10px] text-[var(--ink-muted)]">
+          <div key={type} className="flex items-center gap-1.5 text-xs text-[var(--ink-muted)]">
             <span className="h-2 w-2 rounded-full" style={{ background: color }} /> {type}
           </div>
         ))}
@@ -636,9 +636,9 @@ function FeatureTabs() {
       <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft">
         <h3 className="text-sm font-bold text-[var(--ink)] mb-3">{f.icon} {f.title}</h3>
         <div className="grid sm:grid-cols-3 gap-4">
-          <div><div className="text-[10px] font-bold text-green-600 uppercase tracking-wider mb-1">User Value</div><p className="text-[11px] text-[var(--ink-muted)] leading-snug">{f.value}</p></div>
-          <div><div className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: ACCENT }}>How AI Is Used</div><p className="text-[11px] text-[var(--ink-muted)] leading-snug">{f.ai}</p></div>
-          <div><div className="text-[10px] font-bold text-red-500 uppercase tracking-wider mb-1">Risks</div><p className="text-[11px] text-[var(--ink-muted)] leading-snug">{f.risk}</p></div>
+          <div><div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">User Value</div><p className="text-xs text-[var(--ink-muted)] leading-snug">{f.value}</p></div>
+          <div><div className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: ACCENT }}>How AI Is Used</div><p className="text-xs text-[var(--ink-muted)] leading-snug">{f.ai}</p></div>
+          <div><div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-1">Risks</div><p className="text-xs text-[var(--ink-muted)] leading-snug">{f.risk}</p></div>
         </div>
       </div>
     </div>
@@ -663,14 +663,14 @@ function MvpScope() {
     <div>
       <div className="space-y-1.5 mb-4">
         {items.map((item) => (
-          <div key={item.feature} className={`flex items-center gap-3 rounded-card px-3 py-2 text-xs transition-all ${item.in_ ? "border border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950/20" : "border border-[var(--border)] bg-[var(--paper)] opacity-60"}`}>
+          <div key={item.feature} className={`flex items-center gap-3 rounded-card px-3 py-2 text-xs transition-all ${item.in_ ? "border border-green-200 bg-green-50" : "border border-[var(--border)] bg-[var(--paper)] opacity-60"}`}>
             <span className={`text-sm ${item.in_ ? "text-green-600" : "text-[var(--ink-muted)]"}`}>{item.in_ ? "✓" : "—"}</span>
             <span className={`flex-1 ${item.in_ ? "text-[var(--ink)]" : "text-[var(--ink-muted)] line-through"}`}>{item.feature}</span>
-            <span className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold ${item.in_ ? "bg-green-600 text-white" : "bg-[var(--paper-elevated)] text-[var(--ink-muted)] border border-[var(--border)]"}`}>{item.p}</span>
+            <span className={`shrink-0 rounded px-1.5 py-0.5 text-xs font-bold ${item.in_ ? "bg-green-600 text-white" : "bg-[var(--paper-elevated)] text-[var(--ink-muted)] border border-[var(--border)]"}`}>{item.p}</span>
           </div>
         ))}
       </div>
-      <div className="rounded-card border border-amber-200 dark:border-amber-900 bg-amber-50 dark:bg-amber-950/30 p-3 text-xs text-amber-700 dark:text-amber-400">
+      <div className="rounded-card border border-amber-200 bg-amber-50 p-3 text-xs text-amber-700">
         <strong>MVP rationale:</strong> Notion is the single richest knowledge source in most mid-size companies. Nailing one ingestion source deeply (with quality extraction and search) validates the core value prop before adding complexity from Slack, GitHub, and meetings.
       </div>
     </div>
@@ -696,7 +696,7 @@ function UserFlowDiagram() {
           </div>
           <div className="pb-4 flex-1">
             <div className="text-xs font-bold text-[var(--ink)]">{s.label}</div>
-            <div className="text-[11px] text-[var(--ink-muted)]">{s.detail}</div>
+            <div className="text-xs text-[var(--ink-muted)]">{s.detail}</div>
           </div>
         </div>
       ))}
@@ -719,11 +719,11 @@ function ArchDiagram() {
         <div key={layer.label}>
           <div className="flex gap-3 items-stretch">
             <div className="w-28 sm:w-36 shrink-0 rounded-card border-2 p-2 flex items-center justify-center text-center" style={{ borderColor: layer.color + "40", background: layer.color + "10" }}>
-              <span className="text-[10px] sm:text-xs font-bold" style={{ color: layer.color }}>{layer.label}</span>
+              <span className="text-xs sm:text-xs font-bold" style={{ color: layer.color }}>{layer.label}</span>
             </div>
             <div className="flex-1 flex flex-wrap gap-1.5 items-center">
               {layer.items.map((item) => (
-                <span key={item} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] px-2 py-1 text-[10px] sm:text-xs text-[var(--ink)] shadow-soft">{item}</span>
+                <span key={item} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] px-2 py-1 text-xs sm:text-xs text-[var(--ink)] shadow-soft">{item}</span>
               ))}
             </div>
           </div>
@@ -756,10 +756,10 @@ function RiskSection() {
             <span className="text-xs font-bold text-[var(--ink)]">{r.risk}</span>
           </div>
           <div className="flex gap-2 sm:w-32 shrink-0">
-            <span className="rounded px-1.5 py-0.5 text-[10px] font-bold text-white" style={{ background: r.color }}>{r.severity}</span>
-            <span className="rounded px-1.5 py-0.5 text-[10px] font-medium border border-[var(--border)] text-[var(--ink-muted)]">P: {r.likelihood}</span>
+            <span className="rounded px-1.5 py-0.5 text-xs font-bold text-white" style={{ background: r.color }}>{r.severity}</span>
+            <span className="rounded px-1.5 py-0.5 text-xs font-medium border border-[var(--border)] text-[var(--ink-muted)]">P: {r.likelihood}</span>
           </div>
-          <p className="text-[11px] text-[var(--ink-muted)] flex-1">{r.mitigation}</p>
+          <p className="text-xs text-[var(--ink-muted)] flex-1">{r.mitigation}</p>
         </div>
       ))}
     </div>
@@ -780,17 +780,17 @@ function Roadmap() {
         {phases.map((p) => (
           <div key={p.phase} className="flex gap-4">
             <div className="hidden sm:flex flex-col items-center shrink-0">
-              <div className="h-8 w-8 rounded-full flex items-center justify-center text-[10px] font-bold text-white z-10" style={{ background: p.color }}>{p.phase.replace("Phase ", "")}</div>
+              <div className="h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold text-white z-10" style={{ background: p.color }}>{p.phase.replace("Phase ", "")}</div>
             </div>
             <div className="flex-1 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft" style={{ borderLeftColor: p.color, borderLeftWidth: 3 }}>
               <div className="flex items-center gap-2 mb-2">
-                <span className="sm:hidden text-[10px] font-bold text-white rounded px-1.5 py-0.5" style={{ background: p.color }}>{p.phase}</span>
+                <span className="sm:hidden text-xs font-bold text-white rounded px-1.5 py-0.5" style={{ background: p.color }}>{p.phase}</span>
                 <span className="text-xs font-bold text-[var(--ink)]">{p.title}</span>
-                <span className="text-[10px] text-[var(--ink-muted)]">{p.weeks}</span>
+                <span className="text-xs text-[var(--ink-muted)]">{p.weeks}</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {p.items.map((item) => (
-                  <span key={item} className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2 py-0.5 text-[10px] text-[var(--ink-muted)]">{item}</span>
+                  <span key={item} className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2 py-0.5 text-xs text-[var(--ink-muted)]">{item}</span>
                 ))}
               </div>
             </div>

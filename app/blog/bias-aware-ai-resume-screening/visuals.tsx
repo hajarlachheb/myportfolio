@@ -33,7 +33,7 @@ function Bar({ value, max, label, color = "var(--accent)" }: { value: number; ma
           className="h-full rounded-full transition-all duration-700 ease-out"
           style={{ width: `${pct}%`, background: color }}
         />
-        <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold mix-blend-difference text-white">
+        <span className="absolute inset-0 flex items-center justify-center text-xs font-bold mix-blend-difference text-white">
           {value}%
         </span>
       </div>
@@ -46,7 +46,7 @@ function MetricCard({ value, label, sub, color = "var(--accent)" }: { value: str
     <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft text-center">
       <div className="font-display text-xl font-bold" style={{ color }}>{value}</div>
       <div className="text-xs font-medium text-[var(--ink)] mt-1">{label}</div>
-      {sub && <div className="text-[10px] text-[var(--ink-muted)] mt-0.5">{sub}</div>}
+      {sub && <div className="text-xs text-[var(--ink-muted)] mt-0.5">{sub}</div>}
     </div>
   );
 }
@@ -101,12 +101,12 @@ export function CaseStudyVisuals() {
             <div key={c.title} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft">
               <div className="text-2xl mb-2">{c.icon}</div>
               <h3 className="text-xs font-bold text-[var(--ink)] mb-1">{c.title}</h3>
-              <p className="text-[11px] text-[var(--ink-muted)] leading-snug">{c.desc}</p>
+              <p className="text-xs text-[var(--ink-muted)] leading-snug">{c.desc}</p>
             </div>
           ))}
         </div>
-        <div className="rounded-card border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-950/30 p-4">
-          <p className="text-xs font-medium text-red-700 dark:text-red-400">
+        <div className="rounded-card border border-red-200 bg-red-50 p-4">
+          <p className="text-xs font-medium text-red-700">
             Key insight: AI screening tools trained on historical hiring data learn and amplify existing biases.
             The gap in the market is a tool that is fast, accurate, <strong>explainable</strong>, and <strong>fair</strong>.
           </p>
@@ -122,7 +122,7 @@ export function CaseStudyVisuals() {
           </div>
           <div className="flex-1">
             <div className="space-y-2">
-              <div className="text-[10px] font-semibold text-[var(--ink-muted)] uppercase tracking-wider mb-1">Market Growth ($B)</div>
+              <div className="text-xs font-semibold text-[var(--ink-muted)] uppercase tracking-wider mb-1">Market Growth ($B)</div>
               {[
                 { year: "2024", val: 34, color: "var(--accent-soft)" },
                 { year: "2026", val: 42, color: "var(--accent)" },
@@ -213,7 +213,7 @@ export function CaseStudyVisuals() {
               <span className="text-xl">{m.icon}</span>
               <div>
                 <div className="text-xs font-bold text-[var(--ink)]">{m.method}</div>
-                <div className="text-[10px] text-[var(--ink-muted)]">{m.n}</div>
+                <div className="text-xs text-[var(--ink-muted)]">{m.n}</div>
               </div>
             </div>
           ))}
@@ -230,7 +230,7 @@ export function CaseStudyVisuals() {
           <p className="text-xs italic text-[var(--ink-muted)]">
             &ldquo;I know I have blind spots. Everyone does. But I have zero tools to catch them. I just hope I{"'"}m being fair.&rdquo;
           </p>
-          <p className="text-[10px] text-[var(--ink-muted)] mt-1">— Recruiter, 400-person fintech company</p>
+          <p className="text-xs text-[var(--ink-muted)] mt-1">— Recruiter, 400-person fintech company</p>
         </div>
       </Section>
 
@@ -253,8 +253,8 @@ export function CaseStudyVisuals() {
           ].map((p) => (
             <div key={p.title} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-3 text-center shadow-soft">
               <div className="text-xl mb-1">{p.icon}</div>
-              <div className="text-[10px] font-bold text-[var(--ink)] mb-0.5">{p.title}</div>
-              <div className="text-[10px] text-[var(--ink-muted)] leading-snug">{p.desc}</div>
+              <div className="text-xs font-bold text-[var(--ink)] mb-0.5">{p.title}</div>
+              <div className="text-xs text-[var(--ink-muted)] leading-snug">{p.desc}</div>
             </div>
           ))}
         </div>
@@ -289,7 +289,7 @@ export function CaseStudyVisuals() {
             { cat: "Hosting", tool: "Vercel + Railway" },
           ].map((t) => (
             <div key={t.cat} className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-2.5 shadow-soft">
-              <div className="text-[10px] font-bold text-[var(--accent)] uppercase">{t.cat}</div>
+              <div className="text-xs font-bold text-[var(--accent)] uppercase">{t.cat}</div>
               <div className="text-xs text-[var(--ink)] mt-0.5">{t.tool}</div>
             </div>
           ))}
@@ -328,8 +328,8 @@ export function CaseStudyVisuals() {
                 { label: "Retention", desc: "Auto-purge after hiring cycle + retention period" },
               ].map((c) => (
                 <div key={c.label} className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-2 flex gap-2">
-                  <span className="text-[10px] font-bold text-[var(--accent)] bg-[var(--accent-soft)] rounded px-1.5 py-0.5 shrink-0">{c.label}</span>
-                  <span className="text-[11px] text-[var(--ink-muted)]">{c.desc}</span>
+                  <span className="text-xs font-bold text-[var(--accent)] bg-[var(--accent-soft)] rounded px-1.5 py-0.5 shrink-0">{c.label}</span>
+                  <span className="text-xs text-[var(--ink-muted)]">{c.desc}</span>
                 </div>
               ))}
             </div>
@@ -365,7 +365,7 @@ export function CaseStudyVisuals() {
           <MetricCard value=">95%" label="Parsing success" sub="No critical errors" color="#06b6d4" />
         </div>
         <div className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-4">
-          <h4 className="text-[10px] font-bold text-[var(--ink)] uppercase tracking-wider mb-2">Guardrail Metrics</h4>
+          <h4 className="text-xs font-bold text-[var(--ink)] uppercase tracking-wider mb-2">Guardrail Metrics</h4>
           <div className="flex flex-wrap gap-4 text-xs text-[var(--ink-muted)]">
             <span>• Shortlist diversity ≥ baseline</span>
             <span>• Override rate 10-30%</span>
@@ -410,10 +410,10 @@ export function CaseStudyVisuals() {
           ].map((e) => (
             <div key={e.id} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[10px] font-bold text-white bg-[var(--accent)] rounded px-1.5 py-0.5">{e.id}</span>
+                <span className="text-xs font-bold text-white bg-[var(--accent)] rounded px-1.5 py-0.5">{e.id}</span>
                 <h4 className="text-xs font-bold text-[var(--ink)]">{e.title}</h4>
               </div>
-              <div className="space-y-1.5 text-[11px] text-[var(--ink-muted)]">
+              <div className="space-y-1.5 text-xs text-[var(--ink-muted)]">
                 <p><strong className="text-[var(--ink)]">H:</strong> {e.hypothesis}</p>
                 <p><strong className="text-[var(--ink)]">Design:</strong> {e.design}</p>
                 <p><strong className="text-[var(--ink)]">Metrics:</strong> {e.metrics}</p>
@@ -449,20 +449,20 @@ export function CaseStudyVisuals() {
             <div key={row.label} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-3 shadow-soft">
               <div className="text-xs font-bold text-[var(--ink)] mb-2">{row.label}</div>
               <div className="flex items-center gap-3 mb-1">
-                <span className="text-[10px] text-[var(--ink-muted)] w-16 shrink-0">Before</span>
+                <span className="text-xs text-[var(--ink-muted)] w-16 shrink-0">Before</span>
                 <div className="flex-1 h-4 bg-[var(--paper)] border border-[var(--border)] rounded-full overflow-hidden">
                   <div className="h-full rounded-full bg-red-400/60" style={{ width: `${row.pctBefore}%` }} />
                 </div>
-                <span className="text-[10px] font-medium text-[var(--ink-muted)] w-14 text-right">{row.before}</span>
+                <span className="text-xs font-medium text-[var(--ink-muted)] w-14 text-right">{row.before}</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-[10px] text-[var(--ink-muted)] w-16 shrink-0">After</span>
+                <span className="text-xs text-[var(--ink-muted)] w-16 shrink-0">After</span>
                 <div className="flex-1 h-4 bg-[var(--paper)] border border-[var(--border)] rounded-full overflow-hidden">
                   <div className="h-full rounded-full bg-green-500/70" style={{ width: `${row.pctAfter}%` }} />
                 </div>
-                <span className="text-[10px] font-medium text-green-600 w-14 text-right">{row.after}</span>
+                <span className="text-xs font-medium text-green-600 w-14 text-right">{row.after}</span>
               </div>
-              <div className="text-[10px] text-[var(--accent)] font-medium mt-1 text-right">{row.improvement}</div>
+              <div className="text-xs text-[var(--accent)] font-medium mt-1 text-right">{row.improvement}</div>
             </div>
           ))}
         </div>
@@ -480,7 +480,7 @@ export function CaseStudyVisuals() {
           ].map((d) => (
             <div key={d.title} className="rounded-card border border-[var(--accent)]/20 bg-[var(--accent-soft)]/10 p-4">
               <h4 className="text-xs font-bold text-[var(--accent)] mb-1">{d.title}</h4>
-              <p className="text-[11px] text-[var(--ink-muted)] leading-snug">{d.desc}</p>
+              <p className="text-xs text-[var(--ink-muted)] leading-snug">{d.desc}</p>
             </div>
           ))}
         </div>
@@ -494,7 +494,7 @@ export function CaseStudyVisuals() {
               "Regulation is a tailwind. Building compliance in from the start is a competitive advantage.",
               "The hardest PM skill is knowing what to exclude. Deferring bias dashboard to Phase 2 enabled a faster, cleaner MVP test.",
             ].map((l, i) => (
-              <li key={i} className="flex gap-2 text-[11px] text-[var(--ink-muted)] leading-snug">
+              <li key={i} className="flex gap-2 text-xs text-[var(--ink-muted)] leading-snug">
                 <span className="text-[var(--accent)] font-bold shrink-0">{i + 1}.</span>
                 <span>{l}</span>
               </li>
@@ -521,7 +521,7 @@ export function CaseStudyVisuals() {
           ].map((t) => (
             <div key={t.tool} className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-2.5 text-center shadow-soft">
               <div className="text-xs font-bold text-[var(--ink)]">{t.tool}</div>
-              <div className="text-[10px] text-[var(--ink-muted)] mt-0.5">{t.use}</div>
+              <div className="text-xs text-[var(--ink-muted)] mt-0.5">{t.use}</div>
             </div>
           ))}
         </div>
@@ -549,24 +549,24 @@ function PersonaCard({
         </div>
         <div>
           <div className="text-xs font-bold text-[var(--ink)]">{name}</div>
-          <div className="text-[10px] text-[var(--ink-muted)]">{role} · {company}</div>
+          <div className="text-xs text-[var(--ink-muted)]">{role} · {company}</div>
         </div>
       </div>
       <div className="p-4 space-y-3">
         <div>
-          <div className="text-[10px] font-bold text-green-600 uppercase tracking-wider mb-1">Goals</div>
+          <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">Goals</div>
           {goals.map((g) => (
-            <div key={g} className="text-[11px] text-[var(--ink-muted)] flex gap-1.5"><span className="text-green-500">✓</span>{g}</div>
+            <div key={g} className="text-xs text-[var(--ink-muted)] flex gap-1.5"><span className="text-green-500">✓</span>{g}</div>
           ))}
         </div>
         <div>
-          <div className="text-[10px] font-bold text-red-500 uppercase tracking-wider mb-1">Frustrations</div>
+          <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-1">Frustrations</div>
           {frustrations.map((f) => (
-            <div key={f} className="text-[11px] text-[var(--ink-muted)] flex gap-1.5"><span className="text-red-400">✗</span>{f}</div>
+            <div key={f} className="text-xs text-[var(--ink-muted)] flex gap-1.5"><span className="text-red-400">✗</span>{f}</div>
           ))}
         </div>
         <div className="rounded-card bg-[var(--paper)] border border-[var(--border)] p-3">
-          <p className="text-[11px] italic text-[var(--ink-muted)]">&ldquo;{quote}&rdquo;</p>
+          <p className="text-xs italic text-[var(--ink-muted)]">&ldquo;{quote}&rdquo;</p>
         </div>
       </div>
     </div>
@@ -629,16 +629,16 @@ function FeatureCards() {
         <h3 className="text-sm font-bold text-[var(--ink)] mb-3">{f.icon} {f.title}</h3>
         <div className="grid sm:grid-cols-3 gap-4">
           <div>
-            <div className="text-[10px] font-bold text-green-600 uppercase tracking-wider mb-1">User Value</div>
-            <p className="text-[11px] text-[var(--ink-muted)] leading-snug">{f.value}</p>
+            <div className="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">User Value</div>
+            <p className="text-xs text-[var(--ink-muted)] leading-snug">{f.value}</p>
           </div>
           <div>
-            <div className="text-[10px] font-bold text-[var(--accent)] uppercase tracking-wider mb-1">How AI Is Used</div>
-            <p className="text-[11px] text-[var(--ink-muted)] leading-snug">{f.ai}</p>
+            <div className="text-xs font-bold text-[var(--accent)] uppercase tracking-wider mb-1">How AI Is Used</div>
+            <p className="text-xs text-[var(--ink-muted)] leading-snug">{f.ai}</p>
           </div>
           <div>
-            <div className="text-[10px] font-bold text-red-500 uppercase tracking-wider mb-1">Risks</div>
-            <p className="text-[11px] text-[var(--ink-muted)] leading-snug">{f.risk}</p>
+            <div className="text-xs font-bold text-red-500 uppercase tracking-wider mb-1">Risks</div>
+            <p className="text-xs text-[var(--ink-muted)] leading-snug">{f.risk}</p>
           </div>
         </div>
       </div>
@@ -666,7 +666,7 @@ function MvpScope() {
           key={item.feature}
           className={`flex items-center gap-3 rounded-card px-3 py-2 text-xs transition-all ${
             item.included
-              ? "border border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950/20"
+              ? "border border-green-200 bg-green-50"
               : "border border-[var(--border)] bg-[var(--paper)] opacity-60"
           }`}
         >
@@ -676,7 +676,7 @@ function MvpScope() {
           <span className={`flex-1 ${item.included ? "text-[var(--ink)]" : "text-[var(--ink-muted)] line-through"}`}>
             {item.feature}
           </span>
-          <span className={`shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold ${
+          <span className={`shrink-0 rounded px-1.5 py-0.5 text-xs font-bold ${
             item.included ? "bg-green-600 text-white" : "bg-[var(--paper-elevated)] text-[var(--ink-muted)] border border-[var(--border)]"
           }`}>
             {item.priority}
@@ -722,14 +722,14 @@ function ArchitectureDiagram() {
                 style={{ borderColor: node.color + "40" }}
               >
                 <div className="text-xs font-bold text-[var(--ink)]">{node.label}</div>
-                <div className="text-[10px] mt-0.5" style={{ color: node.color }}>{node.sub}</div>
+                <div className="text-xs mt-0.5" style={{ color: node.color }}>{node.sub}</div>
               </div>
             );
           })
         )}
       </div>
       <div className="flex justify-center mt-2">
-        <div className="text-[10px] text-[var(--ink-muted)]">↓ data flows top to bottom ↓</div>
+        <div className="text-xs text-[var(--ink-muted)]">↓ data flows top to bottom ↓</div>
       </div>
     </div>
   );
@@ -754,9 +754,9 @@ function BiasSection() {
               <div className="flex-1 h-3 bg-[var(--paper)] border border-[var(--border)] rounded-full overflow-hidden">
                 <div className="h-full rounded-full transition-all duration-500" style={{ width: `${b.severity}%`, background: b.color }} />
               </div>
-              <span className="text-[10px] font-bold w-8 text-right" style={{ color: b.color }}>{b.severity}%</span>
+              <span className="text-xs font-bold w-8 text-right" style={{ color: b.color }}>{b.severity}%</span>
             </div>
-            <p className="text-[10px] text-[var(--ink-muted)] pl-[108px]">Mitigation: {b.mitigation}</p>
+            <p className="text-xs text-[var(--ink-muted)] pl-[108px]">Mitigation: {b.mitigation}</p>
           </div>
         ))}
       </div>
@@ -769,7 +769,7 @@ function BiasSection() {
         ].map((m) => (
           <div key={m.metric} className="rounded-card border border-[var(--border)] bg-[var(--paper)] p-3">
             <div className="text-xs font-bold text-[var(--accent)] mb-1">{m.metric}</div>
-            <div className="text-[10px] text-[var(--ink-muted)]">{m.desc}</div>
+            <div className="text-xs text-[var(--ink-muted)]">{m.desc}</div>
           </div>
         ))}
       </div>
@@ -778,9 +778,9 @@ function BiasSection() {
           { title: "Anonymized Screening", desc: "PII stripped architecturally before model inference — the model cannot see name, gender, ethnicity, or photo." },
           { title: "No Autonomous Rejection", desc: "Every candidate remains visible. The AI ranks but never rejects. Opt-out to human-only review is supported." },
         ].map((e) => (
-          <div key={e.title} className="rounded-card border-2 border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950/20 p-4">
-            <div className="text-xs font-bold text-green-700 dark:text-green-400 mb-1">{e.title}</div>
-            <div className="text-[11px] text-[var(--ink-muted)]">{e.desc}</div>
+          <div key={e.title} className="rounded-card border-2 border-green-200 bg-green-50 p-4">
+            <div className="text-xs font-bold text-green-700 mb-1">{e.title}</div>
+            <div className="text-xs text-[var(--ink-muted)]">{e.desc}</div>
           </div>
         ))}
       </div>
@@ -806,10 +806,10 @@ function RiskMatrix() {
             <span className="text-xs font-bold text-[var(--ink)]">{r.risk}</span>
           </div>
           <div className="flex gap-2 sm:w-32 shrink-0">
-            <span className="rounded px-1.5 py-0.5 text-[10px] font-bold text-white" style={{ background: r.color }}>{r.severity}</span>
-            <span className="rounded px-1.5 py-0.5 text-[10px] font-medium border border-[var(--border)] text-[var(--ink-muted)]">P: {r.likelihood}</span>
+            <span className="rounded px-1.5 py-0.5 text-xs font-bold text-white" style={{ background: r.color }}>{r.severity}</span>
+            <span className="rounded px-1.5 py-0.5 text-xs font-medium border border-[var(--border)] text-[var(--ink-muted)]">P: {r.likelihood}</span>
           </div>
-          <p className="text-[11px] text-[var(--ink-muted)] flex-1">{r.mitigation}</p>
+          <p className="text-xs text-[var(--ink-muted)] flex-1">{r.mitigation}</p>
         </div>
       ))}
     </div>
@@ -831,19 +831,19 @@ function RoadmapTimeline() {
         {phases.map((p) => (
           <div key={p.phase} className="flex gap-4">
             <div className="hidden sm:flex flex-col items-center shrink-0">
-              <div className="h-8 w-8 rounded-full flex items-center justify-center text-[10px] font-bold text-white z-10" style={{ background: p.color }}>
+              <div className="h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold text-white z-10" style={{ background: p.color }}>
                 {p.phase.replace("Phase ", "")}
               </div>
             </div>
             <div className="flex-1 rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-4 shadow-soft" style={{ borderLeftColor: p.color, borderLeftWidth: 3 }}>
               <div className="flex items-center gap-2 mb-2">
-                <span className="sm:hidden text-[10px] font-bold text-white rounded px-1.5 py-0.5" style={{ background: p.color }}>{p.phase}</span>
+                <span className="sm:hidden text-xs font-bold text-white rounded px-1.5 py-0.5" style={{ background: p.color }}>{p.phase}</span>
                 <span className="text-xs font-bold text-[var(--ink)]">{p.title}</span>
-                <span className="text-[10px] text-[var(--ink-muted)]">{p.weeks}</span>
+                <span className="text-xs text-[var(--ink-muted)]">{p.weeks}</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {p.items.map((item) => (
-                  <span key={item} className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2 py-0.5 text-[10px] text-[var(--ink-muted)]">
+                  <span key={item} className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2 py-0.5 text-xs text-[var(--ink-muted)]">
                     {item}
                   </span>
                 ))}

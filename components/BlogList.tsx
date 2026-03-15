@@ -22,7 +22,7 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
-        <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)] mb-2">
+        <h1 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[var(--ink)] mb-2">
           Blog
         </h1>
         <p className="text-sm text-[var(--accent)]/90">
@@ -71,7 +71,7 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
               <p className="mt-1 text-xs text-[var(--ink-muted)]">
                 {formatBlogDate(post.date)}
                 {post.category && (
-                  <span className="ml-2 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[10px] font-medium text-[var(--accent)]">
+                  <span className="ml-2 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--accent)]">
                     {post.category}
                   </span>
                 )}
@@ -86,7 +86,7 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2 py-0.5 text-[10px] font-medium text-[var(--ink-muted)]"
+                      className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2 py-0.5 text-xs font-medium text-[var(--ink-muted)]"
                     >
                       {tag}
                     </span>

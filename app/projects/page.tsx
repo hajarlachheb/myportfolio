@@ -43,7 +43,7 @@ export default function ProjectsPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <div className="mb-8 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
-        <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)] mb-2">
+        <h1 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[var(--ink)] mb-2">
           Projects
         </h1>
         <p className="text-sm text-[var(--accent)]/90">
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
                     <div className="relative overflow-hidden bg-[var(--paper)]">
                       <ProjectImage project={project} />
                       {project.featured && (
-                        <span className="absolute left-2 top-2 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[10px] font-medium text-[var(--accent)]">
+                        <span className="absolute left-2 top-2 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--accent)]">
                           Featured
                         </span>
                       )}
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
                       <h3 className="font-display text-xs font-semibold text-[var(--ink)] line-clamp-2">
                         {project.name}
                       </h3>
-                      <p className="mt-1 text-[11px] leading-snug text-[var(--ink-muted)] line-clamp-2">
+                      <p className="mt-1 text-xs leading-snug text-[var(--ink-muted)] line-clamp-2">
                         {project.summary}
                       </p>
                       {project.tags.length > 0 && (
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
                           {project.tags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="rounded-full border border-[var(--border)] bg-[var(--paper-elevated)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--ink-muted)]"
+                              className="rounded-full border border-[var(--border)] bg-[var(--paper-elevated)] px-1.5 py-0.5 text-xs font-medium text-[var(--ink-muted)]"
                             >
                               {tag}
                             </span>
@@ -104,7 +104,7 @@ export default function ProjectsPage() {
                             href={project.codeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 rounded-button border border-[var(--border)] px-2 py-1 text-[10px] font-medium text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                            className="inline-flex items-center gap-1 rounded-button border border-[var(--border)] px-2 py-1 text-xs font-medium text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                           >
                             Code
                           </a>
@@ -114,7 +114,7 @@ export default function ProjectsPage() {
                             href={project.demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 rounded-button bg-[var(--accent)] px-2 py-1 text-[10px] font-medium text-white transition-colors hover:bg-[var(--accent-dark)]"
+                            className="inline-flex items-center gap-1 rounded-button bg-[var(--accent)] px-2 py-1 text-xs font-medium text-white transition-colors hover:bg-[var(--accent-dark)]"
                           >
                             Demo
                           </a>
@@ -122,7 +122,7 @@ export default function ProjectsPage() {
                         {project.materials?.slice(0, 2).map((m) => {
                           const isInternal = m.url.startsWith("/");
                           const className =
-                            "inline-flex items-center gap-1 rounded-button border border-[var(--border)] px-2 py-1 text-[10px] font-medium text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]";
+                            "inline-flex items-center gap-1 rounded-button border border-[var(--border)] px-2 py-1 text-xs font-medium text-[var(--ink)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]";
                           return isInternal ? (
                             <Link key={m.label} href={m.url} className={className}>
                               {m.label}

@@ -52,9 +52,9 @@ export default function HomePage() {
         </div>
 
         <div className="min-w-0 flex-1 opacity-0 animate-fade-in animation-delay-200">
-          <h1 className="font-display text-lg font-semibold tracking-tight text-[var(--ink)]">
+          <h1 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[var(--ink)]">
             {cv.name}
-            <span className="text-[var(--accent)] font-normal">, AI Engineer & PhD candidate</span>
+            <span className="text-[var(--accent)] font-normal text-lg sm:text-xl">, AI Engineer & PhD candidate</span>
           </h1>
           <ul className="mt-3 space-y-1">
             {HERO_BULLETS.map((line, i) => (

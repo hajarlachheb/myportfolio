@@ -3,7 +3,6 @@ import { Crimson_Pro, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { ThemeScript } from "@/app/ThemeScript";
 
 const display = Crimson_Pro({
   variable: "--font-display",
@@ -18,8 +17,8 @@ const body = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: { default: "Hajar Lachheb | Data Scientist & AI Researcher", template: "%s | Hajar Lachheb" },
-  description: "Girl in tech. CV, papers, blog, projects. Building scalable, secure, responsible AI.",
+  title: { default: "Hajar Lachheb | AI Engineer & PhD Candidate", template: "%s | Hajar Lachheb" },
+  description: "AI Engineer & PhD candidate in AI, Privacy & Security. CV, papers, blog, projects. Building ML systems and research in NLP, privacy, and knowledge-driven AI.",
   openGraph: { type: "website" },
 };
 
@@ -29,9 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="min-h-screen flex flex-col font-body antialiased">
-        <ThemeScript />
         <Nav />
         <main className="relative flex-1 flex flex-col min-h-[calc(100vh-8rem)]">
           {children}
