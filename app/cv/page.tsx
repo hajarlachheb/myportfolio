@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { cv } from "@/content/cv";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const metadata = {
   title: "CV",
   description: cv.tagline,
@@ -10,10 +12,22 @@ export default function CVPage() {
   return (
     <div className="mx-auto w-full max-w-4xl px-5 py-10 sm:px-8 sm:py-14 flex-1">
       <div className="mb-10 rounded-card bg-gradient-to-br from-[var(--paper)] via-[var(--paper-elevated)] to-[var(--accent-soft)]/30 p-6 sm:p-8 border border-[var(--border)] shadow-soft">
-        <h1 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[var(--ink)]">
-          {cv.name}
-        </h1>
-        <p className="mt-1 text-sm text-[var(--accent)] font-medium">{cv.title}</p>
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h1 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-[var(--ink)]">
+              {cv.name}
+            </h1>
+            <p className="mt-1 text-sm text-[var(--accent)] font-medium">{cv.title}</p>
+          </div>
+          <a
+            href={`${basePath}${cv.pdfUrl}`}
+            download="CV_Hajar_Lachheb.pdf"
+            className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white shadow-sm transition-all hover:opacity-90 hover:shadow-md active:scale-[0.97]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
       </div>
 
       <section className="mb-8">
@@ -163,6 +177,21 @@ export default function CVPage() {
           <Link href="/projects" className="mt-2 inline-block text-sm font-medium text-[var(--accent)] hover:underline">
             View all projects →
           </Link>
+        </section>
+      )}
+
+      {"researchCollaboration" in cv && cv.researchCollaboration.length > 0 && (
+        <section className="mb-8">
+          <h2 className="font-display text-base font-semibold text-[var(--ink)] border-b-2 border-[var(--accent)]/40 pb-2 mb-4">
+            Research Collaboration
+          </h2>
+          <div className="rounded-card border border-[var(--border)] bg-[var(--paper-elevated)] p-5 shadow-soft">
+            <ul className="space-y-1 text-sm text-[var(--ink)] list-disc list-inside">
+              {cv.researchCollaboration.map((item: string, i: number) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </section>
       )}
 
