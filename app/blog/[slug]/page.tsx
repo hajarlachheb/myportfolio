@@ -3,9 +3,18 @@ import { notFound } from "next/navigation";
 import { getBlogPost, getBlogSlugs, formatBlogDate } from "@/lib/blog";
 import { Markdown } from "@/components/Markdown";
 
+const DEDICATED_PAGES = new Set([
+  "ai-knowledge-graph-company-km",
+  "bias-aware-ai-resume-screening",
+]);
+
 export function generateStaticParams() {
-  return getBlogSlugs().map((slug) => ({ slug }));
+  const slugs = getBlogSlugs().filter((slug) => !DEDICATED_PAGES.has(slug));
+  if (slugs.length === 0) return [{ slug: "__placeholder" }];
+  return slugs.map((slug) => ({ slug }));
 }
+
+export const dynamicParams = false;
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const post = getBlogPost(params.slug);
