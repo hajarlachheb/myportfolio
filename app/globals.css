@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light theme: dark blue text palette */
+/* Light theme: crimson-rose palette inspired by profile photo */
 :root {
-  --ink: #1e3a5f;
-  --ink-muted: #334155;
-  --paper: #f8fafc;
+  --ink: #2A1520;
+  --ink-muted: #5C3D4A;
+  --paper: #FDF8F9;
   --paper-elevated: #ffffff;
-  --accent: #1d4ed8;
-  --accent-dark: #1e40af;
-  --accent-soft: #dbeafe;
-  --border: #e2e8f0;
-  --border-strong: #94a3b8;
+  --accent: #B8254F;
+  --accent-dark: #921D3E;
+  --accent-soft: #FDE8EE;
+  --border: #E8D5DB;
+  --border-strong: #B89DA8;
 }
 
 html {

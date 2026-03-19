@@ -594,7 +594,7 @@ function KnowledgeGraphDemo() {
             <g key={n.id}>
               <circle cx={n.x} cy={n.y} r="4" fill={typeColors[n.type]} opacity="0.15" />
               <circle cx={n.x} cy={n.y} r="2.5" fill={typeColors[n.type]} />
-              <text x={n.x} y={n.y + 7} textAnchor="middle" fill="var(--ink, #1e3a5f)" fontSize="2.8" fontWeight="600">{n.label}</text>
+              <text x={n.x} y={n.y + 7} textAnchor="middle" fill="var(--ink, #2A1520)" fontSize="2.8" fontWeight="600">{n.label}</text>
               <text x={n.x} y={n.y + 10} textAnchor="middle" fill={typeColors[n.type]} fontSize="2" fontWeight="500">{n.type}</text>
             </g>
           ))}
