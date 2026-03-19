@@ -3,6 +3,7 @@ import { Crimson_Pro, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { KawaiiDeco } from "@/components/KawaiiDeco";
 
 const display = Crimson_Pro({
   variable: "--font-display",
@@ -30,8 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="min-h-screen flex flex-col font-body antialiased">
+        <KawaiiDeco />
         <Nav />
-        <main className="relative flex-1 flex flex-col min-h-[calc(100vh-8rem)]">
+        <main className="relative z-[1] flex-1 flex flex-col min-h-[calc(100vh-8rem)]">
           {children}
         </main>
         <Footer />
