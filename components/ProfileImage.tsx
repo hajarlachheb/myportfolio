@@ -6,7 +6,7 @@ import { useState } from "react";
 type Props = { name: string };
 
 /**
- * Profile photo: put your image at public/profilepic.png (or public/profile.jpg).
+ * Profile photo: put your image at public/profilepic.jpg.
  * If the file is missing or fails to load, initials are shown instead.
  */
 export function ProfileImage({ name }: Props) {
@@ -22,7 +22,7 @@ export function ProfileImage({ name }: Props) {
   }
 
   const basePath = typeof process.env.NEXT_PUBLIC_BASE_PATH === "string" ? process.env.NEXT_PUBLIC_BASE_PATH : "";
-  const src = `${basePath}/profilepic.png`;
+  const src = `${basePath}/profilepic.jpg`;
 
   return (
     <Image

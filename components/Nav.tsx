@@ -23,8 +23,8 @@ export function Nav() {
           href="/"
           className="flex items-center gap-2 font-display text-sm font-semibold text-[var(--ink)] transition-colors hover:text-[var(--accent)]"
         >
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo.png`} alt="HL" width={28} height={28} className="w-7 h-auto rounded-sm" />
-          Hajar L.
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/profilepic.jpg`} alt="HL" width={32} height={32} className="w-8 h-8 rounded-full object-cover border border-[var(--accent)]/40" />
+          <span className="text-base tracking-tight">Hajar L.</span>
         </Link>
         <ul className="flex items-center gap-2 flex-wrap justify-end">
           {links.map(({ href, label }) => {
