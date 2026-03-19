@@ -32,6 +32,15 @@ const SECTION_ORDER: ProjectSection[] = ["Research", "Technical", "Prototypes", 
 
 export const projects: Project[] = [
   {
+    name: "LLM Annotation Quality Evaluation Framework",
+    summary: "Framework for evaluating LLM-generated annotations against human-labelled baselines. Classification metrics, NER sequence labeling via seqeval, soft IoU scoring, bootstrap confidence intervals, slice-based evaluation, error analysis, and inter-LLM agreement heatmaps.",
+    section: "Research",
+    tags: ["Python", "NLP", "LLMs", "Evaluation", "seqeval", "Annotation"],
+    image: "/projects/llm-annotation.png",
+    codeUrl: "https://github.com/hajarlachheb/llm-annotation-eval",
+    featured: true,
+  },
+  {
     name: "Exact and Efficient Unlearning for LLMs",
     summary: "Published research on machine unlearning methods for large language models — privacy-preserving techniques to remove training data influence without full retraining.",
     section: "Research",
